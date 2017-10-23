@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
+
 import example.com.beijingnews.R;
 import example.com.beijingnews.base.BaseFragment;
 import example.com.beijingnews.utiles.LogUtil;
@@ -18,15 +21,17 @@ import example.com.beijingnews.utiles.LogUtil;
 
 public class ContentFragment extends BaseFragment {
 
+    @ViewInject(R.id.viewpager)
     private ViewPager viewPager;
+    @ViewInject(R.id.rg_main)
     private RadioGroup rg_main;
 
     @Override
     public View initview() {
         LogUtil.e("正文Fragment视图被初始化了");
         View view = View.inflate(context, R.layout.content_fragment,null);
-        viewPager = (ViewPager) view.findViewById(R.id.viewpager);
-        rg_main = (RadioGroup)view.findViewById(R.id.rg_main);
+        //把视图注入到框架中，让ContentFragment和View关联起来。
+        x.view().inject(this,view);
         return view;
 
     }
