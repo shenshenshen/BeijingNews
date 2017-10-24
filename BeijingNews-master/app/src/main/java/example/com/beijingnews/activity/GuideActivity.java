@@ -23,6 +23,7 @@ import java.util.ArrayList;
 
 import example.com.beijingnews.R;
 import example.com.beijingnews.SplashActivity;
+import example.com.beijingnews.adapter.GuideAdapter;
 import example.com.beijingnews.utiles.CacheUtils;
 import example.com.beijingnews.utiles.DensityUtil;
 
@@ -72,7 +73,7 @@ public class GuideActivity extends Activity {
             ll_point_group.addView(point);
         }
         //设置ViewPager的适配器
-        viewPager.setAdapter(new MyviewPager());
+        viewPager.setAdapter(new GuideAdapter(imageViews));
 
         //视图树
         iv_red_point.getViewTreeObserver().addOnGlobalLayoutListener(new MyOnGlobalLayoutListener());
@@ -146,30 +147,7 @@ public class GuideActivity extends Activity {
         }
     }
 
-    class MyviewPager extends PagerAdapter {
 
-        @Override
-        public int getCount() {
-            return imageViews.size();
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view == object;
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            ImageView imageView = imageViews.get(position);
-            container.addView(imageView);
-            return imageView;
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView((View) object);
-        }
-    }
 }
 
 

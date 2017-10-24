@@ -11,13 +11,18 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.util.ArrayList;
 
+import example.com.beijingnews.Listener.ContentOnCheckedChangeListener;
+import example.com.beijingnews.Listener.ContentOnPageChangeListener;
 import example.com.beijingnews.R;
+import example.com.beijingnews.activity.MainActivity;
+import example.com.beijingnews.adapter.ContentFragmentAdapter;
 import example.com.beijingnews.base.BaseFragment;
 import example.com.beijingnews.base.BasePager;
 import example.com.beijingnews.pager.GovaffairPager;
@@ -27,6 +32,8 @@ import example.com.beijingnews.pager.SettingPager;
 import example.com.beijingnews.pager.SmartServicePager;
 import example.com.beijingnews.utiles.LogUtil;
 import example.com.beijingnews.view.NoScrollViewPager;
+
+import static example.com.beijingnews.is.isEnableSlidingMenu.isEnableSlidingMenu;
 
 /**
  * Created by Administrator on 2017/10/20.
@@ -63,92 +70,24 @@ public class ContentFragment extends BaseFragment  {
         basePagers.add(new GovaffairPager(context));
         basePagers.add(new SettingPager(context));
 
-
-
         //设置ViewPager的适配器
-        viewPager.setAdapter(new ContentFragmentAdapter());
+        viewPager.setAdapter(new ContentFragmentAdapter(basePagers));
 
-        rg_main.setOnCheckedChangeListener(new MyOnCheckedChangeListener());
+        rg_main.setOnCheckedChangeListener(new ContentOnCheckedChangeListener(viewPager,context));
 
-        viewPager.addOnPageChangeListener(new MyOnPageChangeListener());
+        viewPager.addOnPageChangeListener(new ContentOnPageChangeListener(basePagers));
 
         //默认选项
         rg_main.check(R.id.rb_home);
+
         basePagers.get(0).initData();
 
-    }
+        //默认不可滑动
 
-    class MyOnPageChangeListener implements ViewPager.OnPageChangeListener{
+        isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE,context);
 
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-        }
-
-        @Override
-        public void onPageSelected(int position) {
-            basePagers.get(position).initData();
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-
-        }
-    }
-
-    class MyOnCheckedChangeListener implements RadioGroup.OnCheckedChangeListener{
-
-        @Override
-        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-            switch (i){
-                case R.id.rb_home://主页面
-                    viewPager.setCurrentItem(0,false);
-                    break;
-                case R.id.rb_newscenter://新闻
-                    viewPager.setCurrentItem(1,false);
-                    break;
-                case R.id.rb_smater://智慧
-                    viewPager.setCurrentItem(2,false);
-                    break;
-                case R.id.rb_govaffair://政要
-                    viewPager.setCurrentItem(3,false);
-                    break;
-                case R.id.rb_setting://设置
-                    viewPager.setCurrentItem(4,false);
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 
 
 
-    class ContentFragmentAdapter extends PagerAdapter{
-
-        @Override
-        public int getCount() {
-            return basePagers.size();
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view == object;
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            BasePager basePager  = basePagers.get(position);//各个页面的实例
-            View rootView = basePager.rootView;//各个子页面
-            //调用各个页面的niniData()
-
-            container.addView(rootView);
-            return rootView;
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView((View) object);
-        }
-    }
 }
