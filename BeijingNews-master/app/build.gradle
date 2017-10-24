@@ -29,4 +29,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':SlidingMenu_library')
     compile 'org.xutils:xutils:3.5.0'
+    compile 'com.google.code.gson:gson:2.8.2'
+    compile 'org.kie.modules:com-google-code-gson:6.5.0.Final'
 }
