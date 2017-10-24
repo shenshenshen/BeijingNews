@@ -13,8 +13,8 @@ import example.com.beijingnews.R;
  */
 
 public class BasePager{
-    public final Context context;//MainActivity
 
+    public final Context context;//MainActivity
     public View rootView;
     public TextView tv_title;
     public ImageButton ib_menu;
@@ -35,7 +35,7 @@ public class BasePager{
     }
 
     //初始化数据
-    private void initData(){
+    public void initData(){
 
     }
 }
