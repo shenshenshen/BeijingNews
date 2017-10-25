@@ -89,5 +89,7 @@ public class ContentFragment extends BaseFragment  {
     }
 
 
-
+    public NewsCenterPager getNewsCenterPager() {
+        return (NewsCenterPager) basePagers.get(1);
+    }
 }

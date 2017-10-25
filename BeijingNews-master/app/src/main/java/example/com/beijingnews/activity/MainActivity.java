@@ -1,11 +1,13 @@
 package example.com.beijingnews.activity;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.githang.statusbar.StatusBarCompat;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
@@ -34,6 +36,9 @@ public class MainActivity extends SlidingFragmentActivity {
     private void iniSlidingMenu() {
         //设置主页面
         setContentView(R.layout.activity_main);
+
+        //设置状态栏颜色
+        //StatusBarCompat.setStatusBarColor(this, Color.RED,false );
 
         //设置左侧菜单
         setBehindContentView(R.layout.activity_leftmenu);
@@ -71,5 +76,9 @@ public class MainActivity extends SlidingFragmentActivity {
 
     public LeftmenuFragment getLeftMenuFragment() {
         return (LeftmenuFragment) getSupportFragmentManager().findFragmentByTag(LEFT_MENU_TAG);
+    }
+
+    public ContentFragment getContentFragment() {
+        return (ContentFragment) getSupportFragmentManager().findFragmentByTag(MAIN_CONTENT_TAG);
     }
 }

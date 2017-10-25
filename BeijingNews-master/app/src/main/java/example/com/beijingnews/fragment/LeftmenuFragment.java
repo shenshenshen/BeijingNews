@@ -20,6 +20,7 @@ import example.com.beijingnews.activity.MainActivity;
 import example.com.beijingnews.base.BaseFragment;
 import example.com.beijingnews.base.BasePager;
 import example.com.beijingnews.domain.NewsCenterPagerBean;
+import example.com.beijingnews.pager.NewsCenterPager;
 import example.com.beijingnews.utiles.DensityUtil;
 import example.com.beijingnews.utiles.LogUtil;
 
@@ -36,7 +37,7 @@ public class LeftmenuFragment extends BaseFragment {
     private leftmenuFragmentAdapter adpter;
 
     //点击的位置
-    private int prePosition;
+    private int prePosition=0;
 
     @Override
     public View initview() {
@@ -47,7 +48,6 @@ public class LeftmenuFragment extends BaseFragment {
         listview.setCacheColorHint(Color.TRANSPARENT);//按下变灰，透明。
         //设置按下listview的item不变色
         listview.setSelector(android.R.color.transparent);
-
         //设置item的点击事件
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -61,11 +61,21 @@ public class LeftmenuFragment extends BaseFragment {
                 mainActivity.getSlidingMenu().toggle();
 
                 //3.切换到对应的详情页面:新闻详情页面，专题详情页面，图组详情页面，互动详情页面
+
+                switchPager(prePosition);
             }
         });
 
         return listview;
 
+    }
+
+    //根据位置切换不同的页面
+    private void switchPager(int position) {
+        MainActivity mainActivity = (MainActivity) context;
+        ContentFragment contentFragment = mainActivity.getContentFragment();
+        NewsCenterPager newsCenterPager = contentFragment.getNewsCenterPager();
+        newsCenterPager.swichPager(position);
     }
 
     @Override
@@ -83,6 +93,9 @@ public class LeftmenuFragment extends BaseFragment {
         //设置适配器
         adpter = new leftmenuFragmentAdapter();
         listview.setAdapter(adpter);
+
+        //设置默认的页面
+        switchPager(prePosition);
     }
 
     class leftmenuFragmentAdapter extends BaseAdapter{
@@ -104,10 +117,12 @@ public class LeftmenuFragment extends BaseFragment {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-            TextView textview = (TextView) View.inflate(context, R.layout.item_leftmenu,null);
-            textview.setText(beanDatalist.get(i).getTitle());
-            textview.setEnabled(i == prePosition);
-            return textview;
+            TextView textView = (TextView) View.inflate(context,R.layout.item_leftmenu,null);
+            textView.setText(beanDatalist.get(i).getTitle());
+            textView.setEnabled(i == prePosition);
+            return textView;
         }
     }
+
+
 }

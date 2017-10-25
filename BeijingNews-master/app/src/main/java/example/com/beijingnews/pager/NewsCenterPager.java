@@ -13,12 +13,18 @@ import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import example.com.beijingnews.activity.MainActivity;
 import example.com.beijingnews.base.BasePager;
+import example.com.beijingnews.base.MenuDetaiBasePager;
 import example.com.beijingnews.domain.NewsCenterPagerBean;
 import example.com.beijingnews.fragment.LeftmenuFragment;
+import example.com.beijingnews.menudetaipager.InteracMenuDatailPager;
+import example.com.beijingnews.menudetaipager.NewsMenuDatailPager;
+import example.com.beijingnews.menudetaipager.PhotosMenuDatailPager;
+import example.com.beijingnews.menudetaipager.TopicMenuDatailPager;
 import example.com.beijingnews.utiles.Constants;
 import example.com.beijingnews.utiles.LogUtil;
 
@@ -29,6 +35,8 @@ import example.com.beijingnews.utiles.LogUtil;
 public class NewsCenterPager extends BasePager {
     //左侧菜单对应的数据集合
     List<NewsCenterPagerBean.DataBean> beanDatalist;
+
+    private ArrayList<MenuDetaiBasePager> menuDetaiBasePagers;
 
     public NewsCenterPager(Context context) {
         super(context);
@@ -53,6 +61,10 @@ public class NewsCenterPager extends BasePager {
         textView.setText("新闻中心内容");
 
         getDataFromNet();
+
+
+
+
     }
 
     //使用xUtils3联网请求数据
@@ -95,6 +107,13 @@ public class NewsCenterPager extends BasePager {
 
         MainActivity mainActivity = (MainActivity)context;
         LeftmenuFragment leftmenuFragment = mainActivity.getLeftMenuFragment();
+
+        menuDetaiBasePagers = new ArrayList<>();
+        menuDetaiBasePagers.add(new NewsMenuDatailPager(context));//新闻详情页面
+        menuDetaiBasePagers.add(new TopicMenuDatailPager(context));//专题详情页面
+        menuDetaiBasePagers.add(new PhotosMenuDatailPager(context));//图组详情页面
+        menuDetaiBasePagers.add(new InteracMenuDatailPager(context));//互动详情页面
+
         leftmenuFragment.setData(beanDatalist);
 
     }
@@ -102,5 +121,17 @@ public class NewsCenterPager extends BasePager {
     //解析json数据
     private NewsCenterPagerBean parsedJson(String json) {
         return new Gson().fromJson(json,NewsCenterPagerBean.class);
+    }
+
+    public void swichPager(int position) {
+        //1.设置标题
+        tv_title.setText(beanDatalist.get(position).getTitle());
+        //2.移除内容
+        fl_content.removeAllViews();
+        //3.添加新内容
+        MenuDetaiBasePager menudetaiBasePager = menuDetaiBasePagers.get(position);
+        View rootView = menudetaiBasePager.rootView;
+        menudetaiBasePager.initData();//初始化
+        fl_content.addView(rootView);
     }
 }
