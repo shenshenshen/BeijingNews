@@ -73,8 +73,10 @@ public class ContentFragment extends BaseFragment  {
         //设置ViewPager的适配器
         viewPager.setAdapter(new ContentFragmentAdapter(basePagers));
 
+        //监听RadioGroup
         rg_main.setOnCheckedChangeListener(new ContentOnCheckedChangeListener(viewPager,context));
 
+        //切换到相应的Pager就初始化火速局
         viewPager.addOnPageChangeListener(new ContentOnPageChangeListener(basePagers));
 
         //默认选项

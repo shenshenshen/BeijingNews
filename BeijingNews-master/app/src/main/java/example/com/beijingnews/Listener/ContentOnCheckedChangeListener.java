@@ -20,6 +20,7 @@ public class ContentOnCheckedChangeListener implements RadioGroup.OnCheckedChang
     private Activity context;
 
     public ContentOnCheckedChangeListener(NoScrollViewPager viewPager, Activity context) {
+
         this.context = context;
 
         if (viewPager != null){
@@ -33,7 +34,7 @@ public class ContentOnCheckedChangeListener implements RadioGroup.OnCheckedChang
     public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
         switch (i){
             case R.id.rb_home://主页面
-                viewPager.setCurrentItem(0,false);
+                viewPager.setCurrentItem(0,false);//false代表滑动动画。
                 isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE,context);
                 break;
             case R.id.rb_newscenter://新闻

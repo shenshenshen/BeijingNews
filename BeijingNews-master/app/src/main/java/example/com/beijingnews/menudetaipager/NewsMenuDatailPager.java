@@ -36,6 +36,5 @@ public class NewsMenuDatailPager extends MenuDetaiBasePager {
         super.initData();
         LogUtil.e("新闻详情页面内容被初始化了");
         textView.setText("新闻详情页面内容");
-
     }
 }

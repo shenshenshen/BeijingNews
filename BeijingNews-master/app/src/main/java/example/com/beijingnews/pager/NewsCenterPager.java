@@ -8,7 +8,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
@@ -20,6 +24,7 @@ import example.com.beijingnews.activity.MainActivity;
 import example.com.beijingnews.base.BasePager;
 import example.com.beijingnews.base.MenuDetaiBasePager;
 import example.com.beijingnews.domain.NewsCenterPagerBean;
+import example.com.beijingnews.domain.NewsCenterPagerBean2;
 import example.com.beijingnews.fragment.LeftmenuFragment;
 import example.com.beijingnews.menudetaipager.InteracMenuDatailPager;
 import example.com.beijingnews.menudetaipager.NewsMenuDatailPager;
@@ -99,8 +104,14 @@ public class NewsCenterPager extends BasePager {
     //解析json数据和显示数据
     private void processData(String json) {
         NewsCenterPagerBean bean = parsedJson(json);
+        NewsCenterPagerBean2 bean2 = parsedJson2(json);
         String title = bean.getData().get(0).getChildren().get(1).getTitle();
+
+        String title2 = bean2.getData().get(0).getChildren().get(1).getTitle();
+
         LogUtil.e("使用gson解析json数据成功-title=="+title);
+
+        LogUtil.e("手动解析json数据-title=="+title2);
 
         //给左侧菜单传递数据
         beanDatalist = bean.getData();
@@ -116,6 +127,84 @@ public class NewsCenterPager extends BasePager {
 
         leftmenuFragment.setData(beanDatalist);
 
+    }
+
+    private NewsCenterPagerBean2 parsedJson2(String json) {
+        NewsCenterPagerBean2 bean2 = new NewsCenterPagerBean2();
+        try {
+            JSONObject object = new JSONObject(json);
+
+            int retcode = object.optInt("retcode");
+            bean2.setRetcode(retcode);//retcode字段解析成功
+
+            JSONArray data = object.optJSONArray("data");
+
+            if (data != null && data.length() >0){
+
+                List<NewsCenterPagerBean2.DetailPagerData> detailPagerDatas = new ArrayList<>();
+                //设置列表数据
+                bean2.setData(detailPagerDatas);
+                //for循环，解析每条数据
+                for (int i=0 ; i<data.length(); i++){
+
+                    JSONObject jsonObject = (JSONObject) data.get(i);
+
+                    NewsCenterPagerBean2.DetailPagerData detailPagerData = new NewsCenterPagerBean2.DetailPagerData();
+                    //添加到集合中
+                    detailPagerDatas.add(detailPagerData);
+
+                    int id =jsonObject.optInt("id");
+                    detailPagerData.setId(id);
+                    int type = jsonObject.optInt("type");
+                    detailPagerData.setType(type);
+                    String title = jsonObject.optString("title");
+                    detailPagerData.setTitle(title);
+                    String url = jsonObject.optString("url");
+                    detailPagerData.setUrl(url);
+                    String url1 = jsonObject.optString("url1");
+                    detailPagerData.setUrl1(url1);
+                    String dayurl = jsonObject.optString("dayurl");
+                    detailPagerData.setDayurl(dayurl);
+                    String excurl = jsonObject.optString("excurl");
+                    detailPagerData.setExcurl(excurl);
+                    String weekurl = jsonObject.optString("weekurl");
+                    detailPagerData.setWeekurl(weekurl);
+
+                    JSONArray children = jsonObject.optJSONArray("children");
+
+                    if (children != null && children.length() >0){
+
+                        List<NewsCenterPagerBean2.DetailPagerData.ChildrenData> childrenDatas = new ArrayList<>();
+
+                        detailPagerData.setChildren(childrenDatas);
+
+                        for (int j=0; j<children.length(); j++){
+                            JSONObject childrenItem = (JSONObject)children.get(j);
+
+                            NewsCenterPagerBean2.DetailPagerData.ChildrenData childrenData = new NewsCenterPagerBean2.DetailPagerData.ChildrenData();
+
+                            childrenDatas.add(childrenData);
+
+                            int childId = childrenItem.optInt("id");
+                            childrenData.setId(childId);
+                            int chiildtype = childrenItem.getInt("type");
+                            childrenData.setType(chiildtype);
+                            String childtitle = childrenItem.optString("title");
+                            childrenData.setTitle(childtitle);
+                            String childUrl = childrenItem.optString("url");
+                            childrenData.setUrl(childUrl);
+
+                        }
+                    }
+
+                }
+            }
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return bean2;
     }
 
     //解析json数据

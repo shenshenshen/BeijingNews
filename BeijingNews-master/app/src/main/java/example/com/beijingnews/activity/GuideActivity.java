@@ -44,6 +44,7 @@ public class GuideActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
+        //初始化控件
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         btn_start_main = (Button) findViewById(R.id.btn_start_main);
         ll_point_group = (LinearLayout) findViewById(R.id.ll_point_group);

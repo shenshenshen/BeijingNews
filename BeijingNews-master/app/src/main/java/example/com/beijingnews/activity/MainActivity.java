@@ -69,9 +69,6 @@ public class MainActivity extends SlidingFragmentActivity {
 
        // getSupportFragmentManager().beginTransaction().replace(R.id.fl_main_content,new ContentFragment(),MAIN_CONTENT_TAG).replace(R.id.fl_left_content,new LeftmenuFragment(),LEFT_MENU_TAG).commit();
 
-
-
-
     }
 
     public LeftmenuFragment getLeftMenuFragment() {
