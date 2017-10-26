@@ -77,13 +77,6 @@ public class NewsCenterPager extends BasePager {
          getDataFromNet();
 
 
-
-
-
-
-
-
-
     }
 
     //使用xUtils3联网请求数据
@@ -122,14 +115,12 @@ public class NewsCenterPager extends BasePager {
     //解析json数据和显示数据
     private void processData(String json) {
         NewsCenterPagerBean bean = parsedJson(json);
-        NewsCenterPagerBean2 bean2 = parsedJson2(json);
+
         String title = bean.getData().get(0).getChildren().get(1).getTitle();
 
-        String title2 = bean2.getData().get(0).getChildren().get(1).getTitle();
 
         LogUtil.e("使用gson解析json数据成功-title=="+title);
 
-        LogUtil.e("手动解析json数据-title=="+title2);
 
         //给左侧菜单传递数据
         beanDatalist = bean.getData();
@@ -138,7 +129,7 @@ public class NewsCenterPager extends BasePager {
         LeftmenuFragment leftmenuFragment = mainActivity.getLeftMenuFragment();
 
         menuDetaiBasePagers = new ArrayList<>();
-        menuDetaiBasePagers.add(new NewsMenuDatailPager(context));//新闻详情页面
+        menuDetaiBasePagers.add(new NewsMenuDatailPager(context,beanDatalist.get(0)));//新闻详情页面
         menuDetaiBasePagers.add(new TopicMenuDatailPager(context));//专题详情页面
         menuDetaiBasePagers.add(new PhotosMenuDatailPager(context));//图组详情页面
         menuDetaiBasePagers.add(new InteracMenuDatailPager(context));//互动详情页面
