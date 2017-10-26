@@ -3,6 +3,7 @@ package example.com.beijingnews.pager;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.constraint.solver.Goal;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
@@ -30,6 +31,7 @@ import example.com.beijingnews.menudetaipager.InteracMenuDatailPager;
 import example.com.beijingnews.menudetaipager.NewsMenuDatailPager;
 import example.com.beijingnews.menudetaipager.PhotosMenuDatailPager;
 import example.com.beijingnews.menudetaipager.TopicMenuDatailPager;
+import example.com.beijingnews.utiles.CacheUtils;
 import example.com.beijingnews.utiles.Constants;
 import example.com.beijingnews.utiles.LogUtil;
 
@@ -65,7 +67,19 @@ public class NewsCenterPager extends BasePager {
         //4.绑定数据
         textView.setText("新闻中心内容");
 
-        getDataFromNet();
+        //缓存数据
+        String saveJson = CacheUtils.getString(context,Constants.NEWSCENTER_PAGER_URL);//默认空字符串。
+
+        if (!TextUtils.isEmpty(saveJson)){//不能写 savaJson != null
+            processData(saveJson);
+        }
+            //联网请求数据
+         getDataFromNet();
+
+
+
+
+
 
 
 
@@ -79,6 +93,10 @@ public class NewsCenterPager extends BasePager {
             @Override
             public void onSuccess(String result) {
                 LogUtil.e("使用xUtils3联网请求成功=="+result);
+
+                CacheUtils.putString(context,Constants.NEWSCENTER_PAGER_URL,result);
+
+                //缓存数据
 
                 processData(result);
                 //设置适配器
@@ -129,6 +147,7 @@ public class NewsCenterPager extends BasePager {
 
     }
 
+    //手动解析json数据
     private NewsCenterPagerBean2 parsedJson2(String json) {
         NewsCenterPagerBean2 bean2 = new NewsCenterPagerBean2();
         try {
