@@ -2,5 +2,9 @@
     {
         "merged": "D:\\Project\\BeijingNews-master\\BeijingNews-master\\SlidingMenu-master\\SlidingMenu-master\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\slidingmenumain.xml",
         "source": "D:\\Project\\BeijingNews-master\\BeijingNews-master\\SlidingMenu-master\\SlidingMenu-master\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\slidingmenumain.xml"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\BeijingNews-master\\SlidingMenu-master\\SlidingMenu-master\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\slidingmenumain.xml",
+        "source": "D:\\Project\\BeijingNews-version1.0\\BeijingNews-master\\SlidingMenu-master\\SlidingMenu-master\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\slidingmenumain.xml"
     }
 ]

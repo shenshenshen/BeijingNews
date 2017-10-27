@@ -4,7 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BeijingNews.iml" filepath="$PROJECT_DIR$/BeijingNews.iml" />
       <module fileurl="file://$PROJECT_DIR$/BeijingNews-master.iml" filepath="$PROJECT_DIR$/BeijingNews-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BeijingNews-master.iml" filepath="$PROJECT_DIR$/BeijingNews-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/SlidingMenu-master/SlidingMenu-master/library/SlidingMenu_library.iml" filepath="$PROJECT_DIR$/SlidingMenu-master/SlidingMenu-master/library/SlidingMenu_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SlidingMenu-master/SlidingMenu-master/library/SlidingMenu_library.iml" filepath="$PROJECT_DIR$/SlidingMenu-master/SlidingMenu-master/library/SlidingMenu_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
