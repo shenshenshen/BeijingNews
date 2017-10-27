@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_indicator.xml",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\default\\res\\drawable\\vpi__tab_indicator.xml"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\perm_group_camera.xml",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\perm_group_camera.xml"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\perm_group_device_alarms.xml",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\perm_group_device_alarms.xml"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\perm_group_location.xml",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\perm_group_location.xml"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\custom_tab_indicator.xml",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\custom_tab_indicator.xml"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\perm_group_calendar.xml",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\perm_group_calendar.xml"
+    }
+]

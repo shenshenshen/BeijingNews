@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.viewpagerindicator.TabPageIndicator;
+
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
@@ -33,6 +35,9 @@ public class NewsMenuDatailPager extends MenuDetaiBasePager {
 
     @ViewInject(R.id.viewpager)
     private ViewPager viewPager;
+
+    @ViewInject(R.id.tabPageIndicator)
+    private TabPageIndicator tabPageIndicator;
 
     public NewsMenuDatailPager(Context context, NewsCenterPagerBean.DataBean dataBean) {
         super(context);
@@ -60,9 +65,19 @@ public class NewsMenuDatailPager extends MenuDetaiBasePager {
 
         //设置ViewPager的适配器
         viewPager.setAdapter(new MyNewsMenuDetailPagerAdapter());
+
+        //ViewPager和TabPageIndicator关联
+        tabPageIndicator.setViewPager(viewPager);
+
+        //注意以后监听页面的变化，用TabPageIndicator来监听页面的变化
     }
 
     class MyNewsMenuDetailPagerAdapter extends PagerAdapter{
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return Children.get(position).getTitle();
+        }
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {

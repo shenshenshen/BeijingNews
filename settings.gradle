@@ -1,2 +1,4 @@
 include ':app', ':SlidingMenu_library'
 project(':SlidingMenu_library').projectDir = new File('SlidingMenu-master/SlidingMenu-master/library')
+include ':ViewPagerIndicator_library'
+include ':ViewPagerIndicator_sample'

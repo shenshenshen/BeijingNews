@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 
 import com.githang.statusbar.StatusBarCompat;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -23,6 +24,7 @@ public class MainActivity extends SlidingFragmentActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);//设置没有标题
         super.onCreate(savedInstanceState);
 
         //初始化SlidingMenu
