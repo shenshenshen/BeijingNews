@@ -31,6 +31,7 @@ import example.com.beijingnews.menudetaipager.InteracMenuDatailPager;
 import example.com.beijingnews.menudetaipager.NewsMenuDatailPager;
 import example.com.beijingnews.menudetaipager.PhotosMenuDatailPager;
 import example.com.beijingnews.menudetaipager.TopicMenuDatailPager;
+import example.com.beijingnews.menudetaipager.ToupiaoMenuDatailPager;
 import example.com.beijingnews.utiles.CacheUtils;
 import example.com.beijingnews.utiles.Constants;
 import example.com.beijingnews.utiles.LogUtil;
@@ -133,6 +134,7 @@ public class NewsCenterPager extends BasePager {
         menuDetaiBasePagers.add(new TopicMenuDatailPager(context));//专题详情页面
         menuDetaiBasePagers.add(new PhotosMenuDatailPager(context));//图组详情页面
         menuDetaiBasePagers.add(new InteracMenuDatailPager(context));//互动详情页面
+        menuDetaiBasePagers.add(new ToupiaoMenuDatailPager(context));//投票详情页面
 
         leftmenuFragment.setData(beanDatalist);
 

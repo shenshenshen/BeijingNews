@@ -1,4 +1,4 @@
-package example.com.beijingnews.menudetaipager.tabdetailpager;
+package example.com.beijingnews.menudetaipager;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -7,22 +7,19 @@ import android.view.View;
 import android.widget.TextView;
 
 import example.com.beijingnews.base.MenuDetaiBasePager;
-import example.com.beijingnews.domain.NewsCenterPagerBean;
+import example.com.beijingnews.utiles.LogUtil;
 
 /**
- * Created by Administrator on 2017/10/26.
+ * Created by Administrator on 2017/10/27.
  */
 
-public class TabDetailPager extends MenuDetaiBasePager {
+public class ToupiaoMenuDatailPager extends MenuDetaiBasePager {
 
-    private final NewsCenterPagerBean.DataBean.ChildrenBean childrenBean;
     private TextView textView;
 
-    public TabDetailPager(Context context, NewsCenterPagerBean.DataBean.ChildrenBean childrenBean) {
+    public ToupiaoMenuDatailPager(Context context) {
         super(context);
-        this.childrenBean = childrenBean;
     }
-
 
     @Override
     public View initView() {
@@ -36,7 +33,8 @@ public class TabDetailPager extends MenuDetaiBasePager {
     @Override
     public void initData() {
         super.initData();
-        textView.setText(childrenBean.getTitle());
+        LogUtil.e("投票详情页面内容被初始化了");
+        textView.setText("投票详情页面内容");
 
     }
 }
