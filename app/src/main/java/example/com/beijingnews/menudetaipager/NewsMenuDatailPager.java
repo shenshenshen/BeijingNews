@@ -1,14 +1,13 @@
 package example.com.beijingnews.menudetaipager;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ImageButton;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.viewpagerindicator.TabPageIndicator;
 
 import org.xutils.view.annotation.ViewInject;
@@ -18,10 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import example.com.beijingnews.R;
+import example.com.beijingnews.activity.MainActivity;
 import example.com.beijingnews.base.MenuDetaiBasePager;
 import example.com.beijingnews.domain.NewsCenterPagerBean;
 import example.com.beijingnews.menudetaipager.tabdetailpager.TabDetailPager;
 import example.com.beijingnews.utiles.LogUtil;
+
+
 
 /**
  * Created by Administrator on 2017/10/25.
@@ -39,6 +41,9 @@ public class NewsMenuDatailPager extends MenuDetaiBasePager {
     @ViewInject(R.id.tabPageIndicator)
     private TabPageIndicator tabPageIndicator;
 
+    @ViewInject(R.id.next_table)
+    private ImageButton next_table;
+
     public NewsMenuDatailPager(Context context, NewsCenterPagerBean.DataBean dataBean) {
         super(context);
         this.Children = dataBean.getChildren();
@@ -48,6 +53,12 @@ public class NewsMenuDatailPager extends MenuDetaiBasePager {
     public View initView() {
        View view = View.inflate(context, R.layout.newsmenu_detail_pager,null);
        x.view().inject(this,view);
+        next_table.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
+            }
+        });
         return view;
     }
 
@@ -70,6 +81,37 @@ public class NewsMenuDatailPager extends MenuDetaiBasePager {
         tabPageIndicator.setViewPager(viewPager);
 
         //注意以后监听页面的变化，用TabPageIndicator来监听页面的变化
+        tabPageIndicator.setOnPageChangeListener(new MyOnPageChangeListener());
+
+    }
+
+    class MyOnPageChangeListener implements ViewPager.OnPageChangeListener{
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+        }
+
+        @Override
+        public void onPageSelected(int position) {
+            if (position == 0){
+                //SlidingMenu可以全全屏滑动
+                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_FULLSCREEN);
+            }else{
+                //SlidingMenu不可以滑动
+                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE);
+            }
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+        }
+    }
+
+    private  void isEnableSlidingMenu(int touchmodeFullscreen){
+        MainActivity mainActivity = (MainActivity)context;
+        mainActivity.getSlidingMenu().setTouchModeAbove(touchmodeFullscreen);
     }
 
     class MyNewsMenuDetailPagerAdapter extends PagerAdapter{

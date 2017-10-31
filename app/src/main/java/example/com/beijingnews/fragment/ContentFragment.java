@@ -1,5 +1,6 @@
 package example.com.beijingnews.fragment;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
@@ -33,7 +34,7 @@ import example.com.beijingnews.pager.SmartServicePager;
 import example.com.beijingnews.utiles.LogUtil;
 import example.com.beijingnews.view.NoScrollViewPager;
 
-import static example.com.beijingnews.is.isEnableSlidingMenu.isEnableSlidingMenu;
+
 
 /**
  * Created by Administrator on 2017/10/20.
@@ -46,6 +47,8 @@ public class ContentFragment extends BaseFragment  {
     @ViewInject(R.id.rg_main)
     private RadioGroup rg_main;
     private ArrayList<BasePager> basePagers;
+
+
 
     @Override
     public View initview() {
@@ -76,7 +79,7 @@ public class ContentFragment extends BaseFragment  {
         //监听RadioGroup
         rg_main.setOnCheckedChangeListener(new ContentOnCheckedChangeListener(viewPager,context));
 
-        //切换到相应的Pager就初始化火速局
+        //切换到相应的Pager就初始化数据
         viewPager.addOnPageChangeListener(new ContentOnPageChangeListener(basePagers));
 
         //默认选项
@@ -86,12 +89,17 @@ public class ContentFragment extends BaseFragment  {
 
         //默认不可滑动
 
-        isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE,context);
+        isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE);
 
     }
 
 
     public NewsCenterPager getNewsCenterPager() {
         return (NewsCenterPager) basePagers.get(1);
+    }
+
+    private  void isEnableSlidingMenu(int touchmodeFullscreen){
+        MainActivity mainActivity = (MainActivity)context;
+        mainActivity.getSlidingMenu().setTouchModeAbove(touchmodeFullscreen);
     }
 }

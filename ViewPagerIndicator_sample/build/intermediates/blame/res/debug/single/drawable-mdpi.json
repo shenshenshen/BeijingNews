@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_calendar_selected.png",
-        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable-mdpi\\perm_group_calendar_selected.png"
-    },
-    {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\custom_tab_indicator_selected.9.png",
         "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable-mdpi\\custom_tab_indicator_selected.9.png"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_calendar_selected.png",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable-mdpi\\perm_group_calendar_selected.png"
     },
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_camera_normal.png",

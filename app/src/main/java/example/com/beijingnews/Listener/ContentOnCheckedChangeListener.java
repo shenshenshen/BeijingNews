@@ -7,9 +7,10 @@ import android.widget.RadioGroup;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import example.com.beijingnews.R;
+import example.com.beijingnews.activity.MainActivity;
 import example.com.beijingnews.view.NoScrollViewPager;
 
-import static example.com.beijingnews.is.isEnableSlidingMenu.isEnableSlidingMenu;
+
 
 /**
  * Created by Administrator on 2017/10/24.
@@ -35,24 +36,29 @@ public class ContentOnCheckedChangeListener implements RadioGroup.OnCheckedChang
         switch (i){
             case R.id.rb_home://主页面
                 viewPager.setCurrentItem(0,false);//false代表滑动动画。
-                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE,context);
+                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE);
                 break;
             case R.id.rb_newscenter://新闻
                 viewPager.setCurrentItem(1,false);
-                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_FULLSCREEN,context);
+                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_FULLSCREEN);
                 break;
             case R.id.rb_smater://智慧
                 viewPager.setCurrentItem(2,false);
-                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE,context);
+                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE);
                 break;
             case R.id.rb_govaffair://政要
                 viewPager.setCurrentItem(3,false);
-                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE,context);
+                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE);
                 break;
             case R.id.rb_setting://设置
                 viewPager.setCurrentItem(4,false);
-                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE,context);
+                isEnableSlidingMenu(SlidingMenu.TOUCHMODE_NONE);
                 break;
         }
+    }
+
+    private  void isEnableSlidingMenu(int touchmodeFullscreen){
+        MainActivity mainActivity = (MainActivity)context;
+        mainActivity.getSlidingMenu().setTouchModeAbove(touchmodeFullscreen);
     }
 }

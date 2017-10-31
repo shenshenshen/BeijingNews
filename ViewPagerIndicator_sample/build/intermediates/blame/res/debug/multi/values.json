@@ -1074,9 +1074,9 @@
                     "startLine": 124,
                     "startColumn": 4,
                     "startOffset": 8883,
-                    "endLine": 134,
+                    "endLine": 135,
                     "endColumn": 12,
-                    "endOffset": 9480
+                    "endOffset": 9559
                 },
                 "from": {
                     "file": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\default\\res\\values\\values.xml",
@@ -1084,9 +1084,9 @@
                         "startLine": 72,
                         "startColumn": 4,
                         "startOffset": 6164,
-                        "endLine": 82,
+                        "endLine": 83,
                         "endColumn": 12,
-                        "endOffset": 6761
+                        "endOffset": 6840
                     }
                 }
             }
