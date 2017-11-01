@@ -118,14 +118,9 @@ public class NewsCenterPager extends BasePager {
         NewsCenterPagerBean bean = parsedJson(json);
 
         String title = bean.getData().get(0).getChildren().get(1).getTitle();
-
-
         LogUtil.e("使用gson解析json数据成功-title=="+title);
-
-
         //给左侧菜单传递数据
         beanDatalist = bean.getData();
-
         MainActivity mainActivity = (MainActivity)context;
         LeftmenuFragment leftmenuFragment = mainActivity.getLeftMenuFragment();
 

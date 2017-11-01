@@ -105,9 +105,9 @@ public class GuideActivity extends Activity {
 
         @Override
         public void onGlobalLayout() {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                iv_red_point.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-            }
+
+            iv_red_point.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+
             //两点的间距
             leftMax = ll_point_group.getChildAt(1).getLeft() - ll_point_group.getChildAt(0).getLeft();
 

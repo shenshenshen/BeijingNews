@@ -31,6 +31,7 @@ import example.com.beijingnews.utiles.LogUtil;
 
 public class NewsMenuDatailPager extends MenuDetaiBasePager {
 
+    //传递过来的数据
     private final List<NewsCenterPagerBean.DataBean.ChildrenBean> Children;
 
     private ArrayList<TabDetailPager> tabDetailPagers;
@@ -66,11 +67,10 @@ public class NewsMenuDatailPager extends MenuDetaiBasePager {
     public void initData() {
         super.initData();
         LogUtil.e("新闻详情页面内容被初始化了");
-
         tabDetailPagers = new ArrayList<>();
-
         //准备新闻详情页面的数据
         for (int i=0; i<Children.size();i++){
+            //初始化子界面并且传递数据
             tabDetailPagers.add(new TabDetailPager(context,Children.get(i)));
         }
 

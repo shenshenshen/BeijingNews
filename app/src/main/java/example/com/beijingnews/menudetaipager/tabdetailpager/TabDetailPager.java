@@ -8,16 +8,22 @@ import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.GlideBuilder;
+import com.bumptech.glide.RequestBuilder;
+import com.bumptech.glide.request.Request;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
 import org.xutils.common.util.DensityUtil;
 import org.xutils.http.RequestParams;
+import org.xutils.image.ImageOptions;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
@@ -31,6 +37,7 @@ import example.com.beijingnews.domain.TabDetailPagerBean;
 import example.com.beijingnews.utiles.CacheUtils;
 import example.com.beijingnews.utiles.Constants;
 import example.com.beijingnews.utiles.LogUtil;
+import example.com.beijingnews.view.HorizontalScrollViewPager;
 
 /**
  * Created by Administrator on 2017/10/26.
@@ -40,34 +47,43 @@ public class TabDetailPager extends MenuDetaiBasePager {
 
     private final NewsCenterPagerBean.DataBean.ChildrenBean childrenBean;
 
-
-    private ViewPager viewpager;
-
+    private HorizontalScrollViewPager viewpager;
     private TextView tv_title;
-
     private LinearLayout ll_point_group;
-
     private ListView listview;
-
     private String url;
-
     //顶部新闻数据集合
     private List<TabDetailPagerBean.DataBean.TopnewsData> topnews;
+    private List<TabDetailPagerBean.DataBean.NewsData> news;
+    private TabDetailPagerListAdapter adpter;
+    private ImageOptions imageOptions;
+    private int prePosition = 0 ;
 
     public TabDetailPager(Context context, NewsCenterPagerBean.DataBean.ChildrenBean childrenBean) {
         super(context);
         this.childrenBean = childrenBean;
+        /*imageOptions = new ImageOptions.Builder()
+                .setSize(DensityUtil.dip2px(90),DensityUtil.dip2px(90))
+                .setRadius(DensityUtil.dip2px(5))
+                .setCrop(true)
+                .setImageScaleType(ImageView.ScaleType.FIT_XY)
+                .setLoadingDrawableId(R.drawable.news_pic_default)
+                .setFailureDrawableId(R.drawable.news_pic_default)
+                .build();*/
     }
 
 
     @Override
     public View initView() {
         View view = View.inflate(context,R.layout.tabdetail_pager,null);
-        //x.view().inject(view);
-        viewpager = (ViewPager)view.findViewById(R.id.viewpager);
-        tv_title = (TextView)view.findViewById(R.id.tv_title);
-        ll_point_group = (LinearLayout)view.findViewById(R.id.ll_point_group);
         listview = (ListView)view.findViewById(R.id.listview);
+        View topNewsView = View.inflate(context,R.layout.topnews,null);
+        viewpager = (HorizontalScrollViewPager) topNewsView.findViewById(R.id.viewpager);
+        tv_title = (TextView)topNewsView.findViewById(R.id.tv_title);
+        ll_point_group = (LinearLayout)topNewsView.findViewById(R.id.ll_point_group);
+        //把顶部轮播图加入listview
+        listview.addHeaderView(topNewsView);
+
         return view;
     }
 
@@ -76,7 +92,6 @@ public class TabDetailPager extends MenuDetaiBasePager {
         super.initData();
         url = Constants.BASE_URL + childrenBean.getUrl();
         String saveJson = CacheUtils.getString(context,url);
-
         if (!TextUtils.isEmpty(saveJson)){
             //解析数据和显示数据
             ProcessData(saveJson);
@@ -87,19 +102,87 @@ public class TabDetailPager extends MenuDetaiBasePager {
 
     }
     //之前点的位置
-    private int prePosition = 0;
+
 
     //显示数据
     private void ProcessData(String Json) {
         TabDetailPagerBean bean = parsedJson(Json);
-        LogUtil.e(bean.getData().getNews().get(0).getTitle());
+        //添加红点
+        addPoint(bean);
+        //监听页面的改变
+        viewpager.addOnPageChangeListener(new MyOnPageChangeListener());
+        tv_title.setText(topnews.get(prePosition).getTitle());
+        
+        //准备listview对应的集合数据
+        news =  bean.getData().getNews();
+        
+        //设置listview的适配器
 
+        adpter = new TabDetailPagerListAdapter();
+
+        listview.setAdapter(adpter);
+
+
+    }
+
+    //listviewadpater
+    class TabDetailPagerListAdapter extends BaseAdapter{
+
+        @Override
+        public int getCount() {
+            return news.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            ViewHolder viewHolder;
+            if (convertView == null){
+                convertView = View.inflate(context,R.layout.item_tabdetail_pager,null);
+                viewHolder = new ViewHolder();
+                viewHolder.iv_icon = (ImageView) convertView.findViewById(R.id.iv_icon);
+                viewHolder.tv_title = (TextView) convertView.findViewById(R.id.tv_title);
+                viewHolder.tv_time = (TextView) convertView.findViewById(R.id.tv_time);
+                convertView.setTag(viewHolder);
+            }else{
+                viewHolder = (ViewHolder)convertView.getTag();
+            }
+
+            TabDetailPagerBean.DataBean.NewsData newdata = news.get(position);
+            //请求图片xUtils3
+            //x.image().bind(viewHolder.iv_icon,Constants.BASE_URL+newdata.getListimage(),imageOptions);
+            //请求图片使用Glide
+            Glide.with(context).load(Constants.BASE_URL+newdata.getListimage()).into(viewHolder.iv_icon);
+            //设置标题
+            viewHolder.tv_title.setText(newdata.getTitle());
+            //设置时间
+            viewHolder.tv_time.setText(newdata.getPubdate());
+            return convertView;
+        }
+    }
+
+    static class ViewHolder{
+        ImageView iv_icon;
+        TextView  tv_title;
+        TextView  tv_time;
+    }
+
+    private void addPoint(TabDetailPagerBean bean) {
         topnews = bean.getData().getTopnews();
         //设置适配器
         viewpager.setAdapter(new MyPagerAdapter());
 
         ll_point_group.removeAllViews();//移除所有的红点
-        
+
         for (int i=0;i<topnews.size();i++){
             ImageView imageview = new ImageView(context);
             imageview.setBackgroundResource(R.drawable.point_selector);
@@ -117,14 +200,9 @@ public class TabDetailPager extends MenuDetaiBasePager {
 
             ll_point_group.addView(imageview);
         }
-
-
-
-        //监听页面的改变
-        viewpager.addOnPageChangeListener(new MyOnPageChangeListener());
-        tv_title.setText(topnews.get(prePosition).getTitle());
     }
 
+    //viewpager页面的变化
     class MyOnPageChangeListener implements ViewPager.OnPageChangeListener{
 
         @Override
@@ -150,8 +228,7 @@ public class TabDetailPager extends MenuDetaiBasePager {
         }
     }
 
-
-
+    //viewpager
     class MyPagerAdapter extends PagerAdapter{
 
         @Override
@@ -159,9 +236,10 @@ public class TabDetailPager extends MenuDetaiBasePager {
             ImageView imageview  = new ImageView(context);
             imageview.setBackgroundResource(R.drawable.home_scroll_default);
             imageview.setScaleType(ImageView.ScaleType.FIT_XY);
-            container.addView(imageview);
             //联网请求图片
-            x.image().bind(imageview,Constants.BASE_URL+topnews.get(position).getTopimage());
+            //x.image().bind(imageview,Constants.BASE_URL+topnews.get(position).getTopimage());
+            Glide.with(context).load(Constants.BASE_URL+topnews.get(position).getTopimage()).into(imageview);
+            container.addView(imageview);
             return imageview;
         }
 
@@ -186,17 +264,18 @@ public class TabDetailPager extends MenuDetaiBasePager {
     private TabDetailPagerBean parsedJson(String json) {
         return new Gson().fromJson(json,TabDetailPagerBean.class);
     }
-
+    //请求网络
     private void getDataFromNet(){
         RequestParams params = new RequestParams(url);
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
+                LogUtil.e(childrenBean.getTitle()+"页面数据请求成功");
                 //缓存数据
                 CacheUtils.putString(context,url,result);
-                LogUtil.e(childrenBean.getTitle()+"页面数据请求成功");
                 //解析和处理显示数据
                 ProcessData(result);
+                prePosition = 0;
             }
 
             @Override
