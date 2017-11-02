@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.GlideBuilder;
@@ -59,6 +60,7 @@ public class TabDetailPager extends MenuDetaiBasePager {
     private TabDetailPagerListAdapter adpter;
     private ImageOptions imageOptions;
     private int prePosition = 0 ;
+    private boolean isRefresh = false;
 
     public TabDetailPager(Context context, NewsCenterPagerBean.DataBean.ChildrenBean childrenBean) {
         super(context);
@@ -84,7 +86,19 @@ public class TabDetailPager extends MenuDetaiBasePager {
         ll_point_group = (LinearLayout)topNewsView.findViewById(R.id.ll_point_group);
         //把顶部轮播图加入listview
         listview.addHeaderView(topNewsView);
+
+        //设置监听下拉刷新
+        listview.setOnRefreshListener(new MyOnRefreshListener());
         return view;
+    }
+
+    class MyOnRefreshListener implements RefreshListview.OnRefreshListener {
+
+        @Override
+        public void onPullDownRefresh() {
+            isRefresh = true;
+            getDataFromNet();
+        }
     }
 
     @Override
@@ -92,6 +106,7 @@ public class TabDetailPager extends MenuDetaiBasePager {
         super.initData();
         url = Constants.BASE_URL + childrenBean.getUrl();
         String saveJson = CacheUtils.getString(context,url);
+        prePosition = 0;
         if (!TextUtils.isEmpty(saveJson)){
             //解析数据和显示数据
             ProcessData(saveJson);
@@ -267,6 +282,7 @@ public class TabDetailPager extends MenuDetaiBasePager {
     //请求网络
     private void getDataFromNet(){
         RequestParams params = new RequestParams(url);
+        params.setConnectTimeout(4000);
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -275,12 +291,20 @@ public class TabDetailPager extends MenuDetaiBasePager {
                 CacheUtils.putString(context,url,result);
                 //解析和处理显示数据
                 ProcessData(result);
-                prePosition = 0;
+                if (isRefresh){
+                    Toast.makeText(context,"刷新成功",Toast.LENGTH_SHORT).show();
+                }
+                //隐藏下拉刷新控件 - 更新时间
+                listview.onRefreshFinish(true);
             }
-
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
                 LogUtil.e(childrenBean.getTitle()+"页面数据请求失败=="+ex.getMessage());
+                //隐藏下拉刷新控件 - 不更新时间，只是隐藏
+                if (isRefresh){
+                    Toast.makeText(context,"服务器没有开启或者没有连接网络",Toast.LENGTH_SHORT).show();
+                }
+                listview.onRefreshFinish(false);
             }
 
             @Override
@@ -290,7 +314,9 @@ public class TabDetailPager extends MenuDetaiBasePager {
 
             @Override
             public void onFinished() {
+                isRefresh = false;
                 LogUtil.e(childrenBean.getTitle()+"页面数据请求onFinished");
+
             }
         });
     }
