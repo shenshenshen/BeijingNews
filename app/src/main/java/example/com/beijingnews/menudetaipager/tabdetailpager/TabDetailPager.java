@@ -149,7 +149,7 @@ public class TabDetailPager extends MenuDetaiBasePager {
             @Override
             public void onFinished() {
                 LogUtil.e("加载更多联网onFinished");
-                Toast.makeText(context,"加载更多结束",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"加载完成",Toast.LENGTH_SHORT).show();
             }
         });
     }
