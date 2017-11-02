@@ -85,6 +85,7 @@ public class NewsMenuDatailPager extends MenuDetaiBasePager {
 
     }
 
+    //viewPager页面变化监听
     class MyOnPageChangeListener implements ViewPager.OnPageChangeListener{
 
         @Override
@@ -114,6 +115,7 @@ public class NewsMenuDatailPager extends MenuDetaiBasePager {
         mainActivity.getSlidingMenu().setTouchModeAbove(touchmodeFullscreen);
     }
 
+    //PagerAdapter
     class MyNewsMenuDetailPagerAdapter extends PagerAdapter{
 
         @Override

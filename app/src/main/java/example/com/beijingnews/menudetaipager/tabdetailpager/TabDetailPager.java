@@ -38,6 +38,7 @@ import example.com.beijingnews.utiles.CacheUtils;
 import example.com.beijingnews.utiles.Constants;
 import example.com.beijingnews.utiles.LogUtil;
 import example.com.beijingnews.view.HorizontalScrollViewPager;
+import example.com.beijingnews.view.RefreshListview;
 
 /**
  * Created by Administrator on 2017/10/26.
@@ -50,7 +51,7 @@ public class TabDetailPager extends MenuDetaiBasePager {
     private HorizontalScrollViewPager viewpager;
     private TextView tv_title;
     private LinearLayout ll_point_group;
-    private ListView listview;
+    private RefreshListview listview;
     private String url;
     //顶部新闻数据集合
     private List<TabDetailPagerBean.DataBean.TopnewsData> topnews;
@@ -76,14 +77,13 @@ public class TabDetailPager extends MenuDetaiBasePager {
     @Override
     public View initView() {
         View view = View.inflate(context,R.layout.tabdetail_pager,null);
-        listview = (ListView)view.findViewById(R.id.listview);
+        listview = (RefreshListview)view.findViewById(R.id.listview);
         View topNewsView = View.inflate(context,R.layout.topnews,null);
         viewpager = (HorizontalScrollViewPager) topNewsView.findViewById(R.id.viewpager);
         tv_title = (TextView)topNewsView.findViewById(R.id.tv_title);
         ll_point_group = (LinearLayout)topNewsView.findViewById(R.id.ll_point_group);
         //把顶部轮播图加入listview
         listview.addHeaderView(topNewsView);
-
         return view;
     }
 

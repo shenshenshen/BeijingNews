@@ -87,9 +87,7 @@ public class LeftmenuFragment extends BaseFragment {
 
     public void setData(List<NewsCenterPagerBean.DataBean> beanDatalist) {
         this.beanDatalist = beanDatalist;
-        for (int i=0;i<beanDatalist.size();i++){
-            LogUtil.e("title=="+beanDatalist.get(i).getTitle());
-        }
+
         //设置适配器
         adpter = new leftmenuFragmentAdapter();
         listview.setAdapter(adpter);
