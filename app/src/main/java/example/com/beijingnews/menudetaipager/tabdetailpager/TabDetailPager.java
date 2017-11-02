@@ -1,35 +1,26 @@
 package example.com.beijingnews.menudetaipager.tabdetailpager;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.animation.FastOutLinearInInterpolator;
 import android.text.TextUtils;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.GlideBuilder;
-import com.bumptech.glide.RequestBuilder;
-import com.bumptech.glide.request.Request;
 import com.google.gson.Gson;
 
 import org.xutils.common.Callback;
 import org.xutils.common.util.DensityUtil;
 import org.xutils.http.RequestParams;
 import org.xutils.image.ImageOptions;
-import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import example.com.beijingnews.R;
@@ -40,7 +31,7 @@ import example.com.beijingnews.utiles.CacheUtils;
 import example.com.beijingnews.utiles.Constants;
 import example.com.beijingnews.utiles.LogUtil;
 import example.com.beijingnews.view.HorizontalScrollViewPager;
-import example.com.beijingnews.view.RefreshListview;
+import example.com.refreshl.RefreshListview ;
 
 /**
  * Created by Administrator on 2017/10/26.

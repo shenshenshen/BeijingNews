@@ -1,4 +1,4 @@
-include ':app', ':SlidingMenu_library'
+include ':app', ':SlidingMenu_library', ':RefreshListView'
 project(':SlidingMenu_library').projectDir = new File('SlidingMenu-master/SlidingMenu-master/library')
 include ':ViewPagerIndicator_library'
 include ':ViewPagerIndicator_sample'
