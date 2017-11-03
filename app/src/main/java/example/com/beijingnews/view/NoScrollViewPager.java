@@ -19,11 +19,13 @@ public class NoScrollViewPager extends ViewPager{
         super(context, attrs);
     }
 
+
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         return true;
     }
 
+    //屏蔽了系统自带特有的左右滑动事件
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         return false;

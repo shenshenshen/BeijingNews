@@ -231,7 +231,7 @@ public class RefreshListview extends ListView {
         return listViewOnScreeY <= topNewsViewOnScreenY;
     }
 
-    //根据下拉的状态刷新
+    //
     private void refreshViewState(){
         switch (currentStatus){
             case PULL_DOWN_REFRESH://下拉刷新

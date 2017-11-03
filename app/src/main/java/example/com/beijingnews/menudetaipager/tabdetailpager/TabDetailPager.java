@@ -1,11 +1,14 @@
 package example.com.beijingnews.menudetaipager.tabdetailpager;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -39,6 +42,7 @@ import example.com.refreshl.RefreshListview ;
 
 public class TabDetailPager extends MenuDetaiBasePager {
 
+    public static final String READ_ARRAY_ID = "read_array_id";
     private final NewsCenterPagerBean.DataBean.ChildrenBean childrenBean;
 
     private HorizontalScrollViewPager viewpager;
@@ -89,7 +93,38 @@ public class TabDetailPager extends MenuDetaiBasePager {
 
         //设置监听下拉刷新
         listview.setOnRefreshListener(new MyOnRefreshListener());
+
+        //设置ListView的item的点击监听
+        listview.setOnItemClickListener(new MyOnItemClickListener());
+
+
         return view;
+    }
+
+    class MyOnItemClickListener implements AdapterView.OnItemClickListener{
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            int realPosition = position - 1;
+            TabDetailPagerBean.DataBean.NewsData newsData = news.get(realPosition);
+            Toast.makeText(context,"newsData_id=="+newsData.getId()+",newsData_title=="+newsData.getTitle(),Toast.LENGTH_SHORT).show();
+
+            //1，取出保存的id集合
+            String idArray = CacheUtils.getString(context,READ_ARRAY_ID);//"3511"
+            //2，判断是否存在，如果不存在，才保存，并且刷新适配器
+            if (!idArray.contains(newsData.getId()+"")){//3511
+                CacheUtils.putString(context,READ_ARRAY_ID,idArray+newsData.getId()+",");//"3511,"
+
+                //刷新适配器
+                adpter.notifyDataSetChanged();//getCount - - >getView
+            }
+
+            //跳转到新闻浏览页面
+            Intent intent = new Intent(context,NewsDetailActivity.class);
+            context.startActivity(intent);
+
+        }
     }
 
     //刷新监听
@@ -242,6 +277,16 @@ public class TabDetailPager extends MenuDetaiBasePager {
             viewHolder.tv_title.setText(newdata.getTitle());
             //设置时间
             viewHolder.tv_time.setText(newdata.getPubdate());
+
+            String idArray = CacheUtils.getString(context,READ_ARRAY_ID);
+            if (idArray.contains(newdata.getId()+"")){
+                //设置灰色
+                viewHolder.tv_title.setTextColor(Color.GRAY);
+            }else {
+                //设置黑色
+                viewHolder.tv_title.setTextColor(Color.BLACK);
+            }
+
             return convertView;
         }
     }

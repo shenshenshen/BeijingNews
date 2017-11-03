@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="example.com.beijingnews">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -20,8 +21,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.GuideActivity" />
-        <activity android:name=".activity.MainActivity"
-            android:theme="@style/Theme.PageIndicatorDefaults"/>
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/Theme.PageIndicatorDefaults" />
+        <activity android:name=".activity.NewsDetailActivity"></activity>
     </application>
 
 </manifest>
