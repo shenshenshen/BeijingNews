@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.handmark.pulltorefresh.library.extras.SoundPullEventListener;
 
 import org.xutils.common.Callback;
 import org.xutils.common.util.DensityUtil;
@@ -86,6 +87,12 @@ public class TopicDetailPager extends MenuDetaiBasePager {
         mPullRefreshListView = (PullToRefreshListView)view.findViewById(R.id.pull_refresh_list);
         listview = mPullRefreshListView.getRefreshableView();
 
+        SoundPullEventListener<ListView> soundListener = new SoundPullEventListener<ListView>(context);
+        soundListener.addSoundEvent(PullToRefreshBase.State.PULL_TO_REFRESH, R.raw.pull_event);
+        soundListener.addSoundEvent(PullToRefreshBase.State.RESET, R.raw.reset_sound);
+        soundListener.addSoundEvent(PullToRefreshBase.State.REFRESHING, R.raw.refreshing_sound);
+        mPullRefreshListView.setOnPullEventListener(soundListener);
+
         View topNewsView = View.inflate(context,R.layout.topnews,null);
         viewpager = (HorizontalScrollViewPager) topNewsView.findViewById(R.id.viewpager);
         tv_title = (TextView)topNewsView.findViewById(R.id.tv_title);
@@ -100,6 +107,7 @@ public class TopicDetailPager extends MenuDetaiBasePager {
         mPullRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
+                isRefresh = true;
                 getDataFromNet();
             }
 

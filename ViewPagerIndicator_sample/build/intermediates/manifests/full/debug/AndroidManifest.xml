@@ -9,6 +9,7 @@
         android:targetSdkVersion="23" />
 
     <application
+        android:debuggable="true"
         android:icon="@drawable/icon"
         android:label="ViewPagerIndicator Sample" >
         <activity

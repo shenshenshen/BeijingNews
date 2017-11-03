@@ -64,6 +64,7 @@ public class RefreshListview extends ListView {
         initFooterView(context);
     }
 
+    //底部布局加载更多
     private void initFooterView(Context context) {
         footview = View.inflate(context,R.layout.refresh_footer,null);
         footview.measure(0,0);
@@ -83,7 +84,7 @@ public class RefreshListview extends ListView {
 
     }
 
-
+    //监听屏幕滚动，求ListView最后一条
     class MyOnScrollListener implements OnScrollListener{
 
         @Override
@@ -109,7 +110,7 @@ public class RefreshListview extends ListView {
         }
     }
 
-
+    //初始化下拉箭头动画
     private void initAnimation() {
         upAnimaition = new RotateAnimation(0,-180,RotateAnimation.RELATIVE_TO_SELF,0.5f,RotateAnimation.RELATIVE_TO_SELF,0.5f);
         upAnimaition.setDuration(500);
@@ -122,10 +123,9 @@ public class RefreshListview extends ListView {
 
     public RefreshListview(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
-
     }
 
+    //初始化头部布局
     private void initHeaderView(Context context) {
          headerView = (LinearLayout) View.inflate(context, R.layout.refresh_header,null);
         //下拉刷新
@@ -147,6 +147,7 @@ public class RefreshListview extends ListView {
 
     private float startY = -1;
 
+    //重写触摸事件
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         switch (ev.getAction()){
@@ -230,6 +231,7 @@ public class RefreshListview extends ListView {
         return listViewOnScreeY <= topNewsViewOnScreenY;
     }
 
+    //根据下拉的状态刷新
     private void refreshViewState(){
         switch (currentStatus){
             case PULL_DOWN_REFRESH://下拉刷新
