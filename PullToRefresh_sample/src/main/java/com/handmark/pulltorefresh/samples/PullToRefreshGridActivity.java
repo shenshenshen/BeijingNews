@@ -80,7 +80,7 @@ public final class PullToRefreshGridActivity extends Activity {
 		mGridView.setAdapter(mAdapter);
 	}
 
-	private class GetDataTask extends AsyncTask<Void, Void, String[]> {
+	class GetDataTask extends AsyncTask<Void, Void, String[]> {
 
 		@Override
 		protected String[] doInBackground(Void... params) {

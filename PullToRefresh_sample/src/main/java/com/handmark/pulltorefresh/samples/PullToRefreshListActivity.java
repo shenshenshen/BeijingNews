@@ -29,6 +29,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -60,7 +61,7 @@ public final class PullToRefreshListActivity extends ListActivity {
 		mPullRefreshListView = (PullToRefreshListView) findViewById(R.id.pull_refresh_list);
 
 		// Set a listener to be invoked when the list should be refreshed.
-		mPullRefreshListView.setOnRefreshListener(new OnRefreshListener<ListView>() {
+	/*	mPullRefreshListView.setOnRefreshListener(new OnRefreshListener<ListView>() {
 			@Override
 			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
 				String label = DateUtils.formatDateTime(getApplicationContext(), System.currentTimeMillis(),
@@ -72,6 +73,21 @@ public final class PullToRefreshListActivity extends ListActivity {
 				// Do work to refresh the list here.
 				new GetDataTask().execute();
 			}
+		});*/
+		mPullRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
+
+			@Override
+			public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
+				Toast.makeText(PullToRefreshListActivity.this, "Pull Down!", Toast.LENGTH_SHORT).show();
+				new GetDataTask().execute();
+			}
+
+			@Override
+			public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
+				Toast.makeText(PullToRefreshListActivity.this, "Pull Up!", Toast.LENGTH_SHORT).show();
+				new GetDataTask().execute();
+			}
+
 		});
 
 		// Add an end-of-list listener
@@ -79,7 +95,7 @@ public final class PullToRefreshListActivity extends ListActivity {
 
 			@Override
 			public void onLastItemVisible() {
-				Toast.makeText(PullToRefreshListActivity.this, "End of List!", Toast.LENGTH_SHORT).show();
+				//Toast.makeText(PullToRefreshListActivity.this, "End of List!", Toast.LENGTH_SHORT).show();
 			}
 		});
 

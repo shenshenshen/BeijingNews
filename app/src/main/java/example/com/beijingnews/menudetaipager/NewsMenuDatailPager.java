@@ -34,6 +34,7 @@ public class NewsMenuDatailPager extends MenuDetaiBasePager {
     //传递过来的数据
     private final List<NewsCenterPagerBean.DataBean.ChildrenBean> Children;
 
+    //子页面数据集合
     private ArrayList<TabDetailPager> tabDetailPagers;
 
     @ViewInject(R.id.viewpager)
@@ -109,12 +110,11 @@ public class NewsMenuDatailPager extends MenuDetaiBasePager {
 
         }
     }
-
+    //是否可以侧滑
     private  void isEnableSlidingMenu(int touchmodeFullscreen){
         MainActivity mainActivity = (MainActivity)context;
         mainActivity.getSlidingMenu().setTouchModeAbove(touchmodeFullscreen);
     }
-
     //PagerAdapter
     class MyNewsMenuDetailPagerAdapter extends PagerAdapter{
 

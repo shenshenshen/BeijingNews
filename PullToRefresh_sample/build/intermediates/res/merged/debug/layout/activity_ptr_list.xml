@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
 <!--     The PullToRefreshListView replaces a standard ListView widget. -->
 
@@ -17,6 +18,8 @@
         android:fastScrollEnabled="false"
         android:footerDividersEnabled="false"
         android:headerDividersEnabled="false"
-        android:smoothScrollbar="true" />
+        android:smoothScrollbar="true"
+        ptr:ptrMode="both"
+        ptr:ptrDrawable="@drawable/android"/>
 
 </LinearLayout>

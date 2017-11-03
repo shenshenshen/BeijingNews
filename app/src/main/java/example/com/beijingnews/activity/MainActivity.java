@@ -68,9 +68,7 @@ public class MainActivity extends SlidingFragmentActivity {
         ft.replace(R.id.fl_left_content,new LeftmenuFragment(),LEFT_MENU_TAG);//左侧菜单
         //提交
         ft.commit();
-
        // getSupportFragmentManager().beginTransaction().replace(R.id.fl_main_content,new ContentFragment(),MAIN_CONTENT_TAG).replace(R.id.fl_left_content,new LeftmenuFragment(),LEFT_MENU_TAG).commit();
-
     }
 
     public LeftmenuFragment getLeftMenuFragment() {

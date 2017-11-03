@@ -48,8 +48,6 @@ public class ContentFragment extends BaseFragment  {
     private RadioGroup rg_main;
     private ArrayList<BasePager> basePagers;
 
-
-
     @Override
     public View initview() {
         LogUtil.e("正文Fragment视图被初始化了");
@@ -57,7 +55,6 @@ public class ContentFragment extends BaseFragment  {
         //把视图注入到框架中，让ContentFragment和View关联起来。
         x.view().inject(this,view);
         return view;
-
     }
 
     @Override

@@ -37,7 +37,7 @@ public class LeftmenuFragment extends BaseFragment {
     private leftmenuFragmentAdapter adpter;
 
     //点击的位置
-    private int prePosition=0;
+    private int prePosition = 0;
 
     @Override
     public View initview() {

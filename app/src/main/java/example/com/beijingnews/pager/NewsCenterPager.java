@@ -2,14 +2,12 @@ package example.com.beijingnews.pager;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.constraint.solver.Goal;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,6 +42,7 @@ public class NewsCenterPager extends BasePager {
     //左侧菜单对应的数据集合
     List<NewsCenterPagerBean.DataBean> beanDatalist;
 
+    //子页面的数据集合
     private ArrayList<MenuDetaiBasePager> menuDetaiBasePagers;
 
     public NewsCenterPager(Context context) {
@@ -57,27 +56,13 @@ public class NewsCenterPager extends BasePager {
         ib_menu.setVisibility(View.VISIBLE);
         //1.设置标题
         tv_title.setText("新闻中心");
-        //2.联网请求，得到数据，创建视图
-        TextView textView = new TextView(context);
-        textView.setGravity(Gravity.CENTER);
-        textView.setTextColor(Color.RED);
-        textView.setTextSize(25);
-
-        //3.把视图添加到BasePager的FrameLayout
-        fl_content.addView(textView);
-        //4.绑定数据
-        textView.setText("新闻中心内容");
-
         //缓存数据
         String saveJson = CacheUtils.getString(context,Constants.NEWSCENTER_PAGER_URL);//默认空字符串。
-
         if (!TextUtils.isEmpty(saveJson)){//不能写 savaJson != null
             processData(saveJson);
         }
             //联网请求数据
          getDataFromNet();
-
-
     }
 
     //使用xUtils3联网请求数据
@@ -89,7 +74,6 @@ public class NewsCenterPager extends BasePager {
                 LogUtil.e("使用xUtils3联网请求成功=="+result);
 
                 CacheUtils.putString(context,Constants.NEWSCENTER_PAGER_URL,result);
-
                 //缓存数据
 
                 processData(result);
@@ -125,11 +109,12 @@ public class NewsCenterPager extends BasePager {
 
         menuDetaiBasePagers = new ArrayList<>();
         menuDetaiBasePagers.add(new NewsMenuDatailPager(context,beanDatalist.get(0)));//新闻详情页面
-        menuDetaiBasePagers.add(new TopicMenuDatailPager(context));//专题详情页面
+        menuDetaiBasePagers.add(new TopicMenuDatailPager(context,beanDatalist.get(0)));//专题详情页面
         menuDetaiBasePagers.add(new PhotosMenuDatailPager(context));//图组详情页面
         menuDetaiBasePagers.add(new InteracMenuDatailPager(context));//互动详情页面
         menuDetaiBasePagers.add(new ToupiaoMenuDatailPager(context));//投票详情页面
 
+        //左侧菜单显示数据
         leftmenuFragment.setData(beanDatalist);
 
     }
@@ -218,6 +203,7 @@ public class NewsCenterPager extends BasePager {
         return new Gson().fromJson(json,NewsCenterPagerBean.class);
     }
 
+    //响应LeftFragment的页面切换
     public void swichPager(int position) {
         //1.设置标题
         tv_title.setText(beanDatalist.get(position).getTitle());
