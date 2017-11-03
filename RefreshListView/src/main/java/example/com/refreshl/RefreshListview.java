@@ -83,7 +83,6 @@ public class RefreshListview extends ListView {
 
     }
 
-    
 
     class MyOnScrollListener implements OnScrollListener{
 
@@ -252,7 +251,6 @@ public class RefreshListview extends ListView {
         }
     }
 
-
     public void onRefreshFinish(boolean sucess) {
         if (isLoadMore){
             //加载更多
@@ -279,6 +277,8 @@ public class RefreshListview extends ListView {
             return format.format(new Date());
     }
 
+
+    //定义回调接口
     public interface OnRefreshListener{
         //当下拉刷新的时候回调这个方法
         public void onPullDownRefresh();
