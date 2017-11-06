@@ -27,6 +27,7 @@ import org.xutils.x;
 import java.util.List;
 
 import example.com.beijingnews.R;
+import example.com.beijingnews.activity.NewsDetailActivity;
 import example.com.beijingnews.base.MenuDetaiBasePager;
 import example.com.beijingnews.domain.NewsCenterPagerBean;
 import example.com.beijingnews.domain.TabDetailPagerBean;
@@ -108,7 +109,9 @@ public class TabDetailPager extends MenuDetaiBasePager {
 
             int realPosition = position - 1;
             TabDetailPagerBean.DataBean.NewsData newsData = news.get(realPosition);
-            Toast.makeText(context,"newsData_id=="+newsData.getId()+",newsData_title=="+newsData.getTitle(),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context,"newsData_id=="+newsData.getId()+",newsData_title=="+newsData.getTitle(),Toast.LENGTH_SHORT).show();
+
+            LogUtil.e("newsData_id=="+newsData.getId()+",newsData_title=="+newsData.getTitle());
 
             //1，取出保存的id集合
             String idArray = CacheUtils.getString(context,READ_ARRAY_ID);//"3511"
@@ -122,8 +125,8 @@ public class TabDetailPager extends MenuDetaiBasePager {
 
             //跳转到新闻浏览页面
             Intent intent = new Intent(context,NewsDetailActivity.class);
+            intent.putExtra("url",Constants.BASE_URL+newsData.getUrl());
             context.startActivity(intent);
-
         }
     }
 
