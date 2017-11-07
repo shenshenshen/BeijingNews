@@ -3,9 +3,11 @@ package example.com.beijingnews.menudetaipager.tabdetailpager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -25,6 +27,8 @@ import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
 import java.util.List;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 import example.com.beijingnews.R;
 import example.com.beijingnews.activity.NewsDetailActivity;
@@ -64,6 +68,7 @@ public class TabDetailPager extends MenuDetaiBasePager {
     private String moreUrl;
     //是否加载更多
     private boolean isLoadMore = false;
+    private InternalHandler internalHandler;
 
     public TabDetailPager(Context context, NewsCenterPagerBean.DataBean.ChildrenBean childrenBean) {
         super(context);
@@ -237,7 +242,38 @@ public class TabDetailPager extends MenuDetaiBasePager {
             //刷新适配器
             adpter.notifyDataSetChanged();
         }
+
+
+
+        //发消息每隔4000切换一次ViewPager页面
+        if (internalHandler == null){
+            internalHandler = new InternalHandler();
+        }
+        //是把消息队列所有的消息和回调移除
+        internalHandler.removeCallbacksAndMessages(null);
+        internalHandler.postDelayed(new MyRunnable(),4000);
+
     }
+
+    class InternalHandler extends android.os.Handler {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            int item = (viewpager.getCurrentItem()+1)%topnews.size();
+            viewpager.setCurrentItem(item);
+            internalHandler.postDelayed(new MyRunnable(),4000);
+        }
+    }
+
+    class MyRunnable implements Runnable{
+
+        @Override//run方法根据Handler new 在哪个线程，就在哪个线程执行
+        public void run() {
+            internalHandler.sendEmptyMessage(0);
+        }
+    }
+
+
 
     //listviewadpater
     class TabDetailPagerListAdapter extends BaseAdapter{
@@ -347,9 +383,22 @@ public class TabDetailPager extends MenuDetaiBasePager {
 
         }
 
+        private boolean isDragging = false;
         @Override
         public void onPageScrollStateChanged(int state) {
-
+            if (state == ViewPager.SCROLL_STATE_DRAGGING){//拖拽
+                isDragging = true;
+                //拖拽的时候要移除消息
+                internalHandler.removeCallbacksAndMessages(null);
+            }else if (state == ViewPager.SCROLL_STATE_SETTLING && isDragging){//惯性
+                //发消息
+                isDragging = false;
+                internalHandler.removeCallbacksAndMessages(null);
+                internalHandler.postDelayed(new MyRunnable(),4000);
+            }else if (state == ViewPager.SCROLL_STATE_IDLE && isDragging){//静止状态
+                //发消息
+                isDragging = false;
+            }
         }
     }
 
@@ -365,6 +414,26 @@ public class TabDetailPager extends MenuDetaiBasePager {
             //x.image().bind(imageview,Constants.BASE_URL+topnews.get(position).getTopimage());
             Glide.with(context).load(Constants.BASE_URL+topnews.get(position).getTopimage()).into(imageview);
             container.addView(imageview);
+
+            imageview.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()){
+                        case MotionEvent.ACTION_DOWN://按下
+                            LogUtil.e("按下");
+                            internalHandler.removeCallbacksAndMessages(null);
+                            break;
+                        case MotionEvent.ACTION_UP://离开
+                            LogUtil.e("离开");
+                            internalHandler.removeCallbacksAndMessages(null);
+                            internalHandler.postDelayed(new MyRunnable(),4000);
+                            break;
+
+                    }
+                    return true;
+                }
+            });
+
             return imageview;
         }
 

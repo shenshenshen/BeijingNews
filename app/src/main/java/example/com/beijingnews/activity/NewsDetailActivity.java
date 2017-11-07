@@ -64,7 +64,7 @@ public class NewsDetailActivity extends Activity implements View.OnClickListener
         getData();
     }
 
-    //得到intent传递过来的url
+    //得到intent传递过来的url,以及对webView的一些初始化
     private void getData() {
         url = getIntent().getStringExtra("url");
 

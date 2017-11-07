@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AndroidAndJs" />
             <option value="$PROJECT_DIR$/PullToRefresh_library" />
             <option value="$PROJECT_DIR$/PullToRefresh_sample" />
             <option value="$PROJECT_DIR$/RefreshListView" />
@@ -18,6 +19,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/pullToRefreshListFragment" />
             <option value="$PROJECT_DIR$/pullToRefreshViewPager" />
+            <option value="$PROJECT_DIR$/尚硅谷商城" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

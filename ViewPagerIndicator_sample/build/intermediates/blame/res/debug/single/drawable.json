@@ -1,7 +1,7 @@
 [
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_indicator.xml",
-        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\default\\res\\drawable\\vpi__tab_indicator.xml"
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\debug\\res\\drawable\\vpi__tab_indicator.xml"
     },
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\perm_group_camera.xml",
@@ -17,11 +17,11 @@
     },
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\news_tab_item_bg_select.9.png",
-        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\default\\res\\drawable\\news_tab_item_bg_select.9.png"
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\debug\\res\\drawable\\news_tab_item_bg_select.9.png"
     },
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi_textcolor_selector.xml",
-        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\default\\res\\drawable\\vpi_textcolor_selector.xml"
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\debug\\res\\drawable\\vpi_textcolor_selector.xml"
     },
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\custom_tab_indicator.xml",

@@ -1,0 +1,154 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\Project\\BeijingNews-version1.0\\尚硅谷商城\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\Project\\BeijingNews-version1.0\\尚硅谷商城\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "92,151",
+                        "endColumns": "57,55",
+                        "endOffsets": "145,202"
+                    },
+                    "to": {
+                        "startLines": "5,6",
+                        "startColumns": "4,4",
+                        "startOffsets": "172,230",
+                        "endColumns": "57,55",
+                        "endOffsets": "225,281"
+                    }
+                },
+                {
+                    "source": "D:\\Project\\BeijingNews-version1.0\\尚硅谷商城\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "57,97,136",
+                        "endColumns": "38,37,39",
+                        "endOffsets": "91,130,171"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,94,132",
+                        "endColumns": "38,37,39",
+                        "endOffsets": "89,127,167"
+                    }
+                },
+                {
+                    "source": "D:\\Project\\BeijingNews-version1.0\\尚硅谷商城\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,13,15,14,5,19,7,11,10,12,17,18,9,8",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "99,56,481,559,521,152,685,210,387,347,427,606,642,300,251",
+                        "endColumns": "52,42,39,41,37,52,46,40,39,39,53,35,42,46,48",
+                        "endOffsets": "147,94,516,596,554,200,727,246,422,382,476,637,680,342,295"
+                    },
+                    "to": {
+                        "startLines": "7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "286,339,382,422,464,502,555,602,643,683,723,777,813,856,903",
+                        "endColumns": "52,42,39,41,37,52,46,40,39,39,53,35,42,46,48",
+                        "endOffsets": "334,377,417,459,497,550,597,638,678,718,772,808,851,898,947"
+                    }
+                },
+                {
+                    "source": "D:\\Project\\BeijingNews-version1.0\\尚硅谷商城\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "6,15",
+                        "startColumns": "4,4",
+                        "startOffsets": "191,522",
+                        "endLines": "12,17",
+                        "endColumns": "12,12",
+                        "endOffsets": "481,637"
+                    },
+                    "to": {
+                        "startLines": "22,29",
+                        "startColumns": "4,4",
+                        "startOffsets": "952,1243",
+                        "endLines": "28,31",
+                        "endColumns": "12,12",
+                        "endOffsets": "1238,1356"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\Project\\BeijingNews-version1.0\\尚硅谷商城\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\Project\\BeijingNews-version1.0\\尚硅谷商城\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "92,151",
+                        "endColumns": "57,55",
+                        "endOffsets": "145,202"
+                    },
+                    "to": {
+                        "startLines": "5,6",
+                        "startColumns": "4,4",
+                        "startOffsets": "172,230",
+                        "endColumns": "57,55",
+                        "endOffsets": "225,281"
+                    }
+                },
+                {
+                    "source": "D:\\Project\\BeijingNews-version1.0\\尚硅谷商城\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "57,97,136",
+                        "endColumns": "38,37,39",
+                        "endOffsets": "91,130,171"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,94,132",
+                        "endColumns": "38,37,39",
+                        "endOffsets": "89,127,167"
+                    }
+                },
+                {
+                    "source": "D:\\Project\\BeijingNews-version1.0\\尚硅谷商城\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,13,15,14,5,19,7,11,10,12,17,18,9,8",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "99,56,481,559,521,152,685,210,387,347,427,606,642,300,251",
+                        "endColumns": "52,42,39,41,37,52,46,40,39,39,53,35,42,46,48",
+                        "endOffsets": "147,94,516,596,554,200,727,246,422,382,476,637,680,342,295"
+                    },
+                    "to": {
+                        "startLines": "7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "286,339,382,422,464,502,555,602,643,683,723,777,813,856,903",
+                        "endColumns": "52,42,39,41,37,52,46,40,39,39,53,35,42,46,48",
+                        "endOffsets": "334,377,417,459,497,550,597,638,678,718,772,808,851,898,947"
+                    }
+                },
+                {
+                    "source": "D:\\Project\\BeijingNews-version1.0\\尚硅谷商城\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "6,15",
+                        "startColumns": "4,4",
+                        "startOffsets": "191,522",
+                        "endLines": "12,17",
+                        "endColumns": "12,12",
+                        "endOffsets": "481,637"
+                    },
+                    "to": {
+                        "startLines": "22,29",
+                        "startColumns": "4,4",
+                        "startOffsets": "952,1243",
+                        "endLines": "28,31",
+                        "endColumns": "12,12",
+                        "endOffsets": "1238,1356"
+                    }
+                }
+            ]
+        }
+    ]
+}

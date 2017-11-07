@@ -14,6 +14,21 @@
                     }
                 }
             ]
+        },
+        {
+            "outputFile": "D:\\Project\\BeijingNews-version1.0\\pullToRefreshListFragment\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ko\\values-ko.xml",
+            "map": [
+                {
+                    "source": "D:\\Project\\BeijingNews-version1.0\\PullToRefresh_library\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,121,188",
+                        "endColumns": "65,66,68",
+                        "endOffsets": "116,183,252"
+                    }
+                }
+            ]
         }
     ]
 }

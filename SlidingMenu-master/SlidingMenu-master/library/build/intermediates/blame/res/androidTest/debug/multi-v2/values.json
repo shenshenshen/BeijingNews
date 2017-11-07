@@ -1,6 +1,21 @@
 {
     "logs": [
         {
+            "outputFile": "D:\\Project\\BeijingNews-version1.0\\SlidingMenu-master\\SlidingMenu-master\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\Project\\BeijingNews-version1.0\\SlidingMenu-master\\SlidingMenu-master\\library\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "14",
+                        "startColumns": "4",
+                        "startOffsets": "1092",
+                        "endColumns": "42",
+                        "endOffsets": "1130"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "D:\\Project\\BeijingNews-version1.0\\SlidingMenu-master\\SlidingMenu-master\\library\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
