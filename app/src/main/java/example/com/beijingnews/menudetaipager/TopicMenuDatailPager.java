@@ -2,16 +2,18 @@ package example.com.beijingnews.menudetaipager;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-import com.viewpagerindicator.TabPageIndicator;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -41,8 +43,8 @@ public class TopicMenuDatailPager extends MenuDetaiBasePager {
     @ViewInject(R.id.viewpager)
     private ViewPager viewPager;
 
-    @ViewInject(R.id.tabPageIndicator)
-    private TabPageIndicator tabPageIndicator;
+    @ViewInject(R.id.tablayout)
+    private TabLayout tabLayout;
 
     @ViewInject(R.id.next_table)
     private ImageButton next_table;
@@ -79,13 +81,33 @@ public class TopicMenuDatailPager extends MenuDetaiBasePager {
         //设置ViewPager的适配器
         viewPager.setAdapter(new MyNewsMenuDetailPagerAdapter());
 
-        //ViewPager和TabPageIndicator关联
-        tabPageIndicator.setViewPager(viewPager);
+        //ViewPager和TabLayout关联
+        tabLayout.setupWithViewPager(viewPager);
 
-        //注意以后监听页面的变化，用TabPageIndicator来监听页面的变化
-        tabPageIndicator.setOnPageChangeListener(new MyOnPageChangeListener());
+        //注意以后监听页面的变化，用TabLayout来监听页面的变化
+        viewPager.addOnPageChangeListener(new MyOnPageChangeListener());
+
+        //设置滑动或者固定
+        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+
+        //自定义Tab样式
+        /*for (int i=0;i < tabLayout.getTabCount();i++){
+            TabLayout.Tab tab = tabLayout.getTabAt(i);
+            tab.setCustomView(getTabView(i));
+        }*/
 
     }
+
+    //自定义Tab样式的布局加载
+    /*private View getTabView(int position) {
+        View view = LayoutInflater.from(context).inflate(R.layout.tab_item,null);
+        TextView tv = (TextView) view.findViewById(R.id.textview);
+        tv.setText(Children.get(position).getTitle());
+        ImageView img = (ImageView) view.findViewById(R.id.imageview);
+        img.setImageResource(R.drawable.dot_focus);
+        return view;
+    }*/
+
 
     //viewPager页面变化监听
     class MyOnPageChangeListener implements ViewPager.OnPageChangeListener{

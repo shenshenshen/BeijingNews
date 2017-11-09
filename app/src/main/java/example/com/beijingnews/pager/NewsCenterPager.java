@@ -1,21 +1,16 @@
 package example.com.beijingnews.pager;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.text.TextUtils;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.TextView;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -73,8 +68,8 @@ public class NewsCenterPager extends BasePager {
            processData(saveJson);
         }
             //联网请求数据
-         //getDataFromNet();
-        getDataFromNetByVolley();
+         getDataFromNet();
+        //getDataFromNetByVolley();
     }
 
     private void getDataFromNetByVolley() {
@@ -85,8 +80,6 @@ public class NewsCenterPager extends BasePager {
             @Override
             public void onResponse(String result) {
 
-
-
                 LogUtil.e("使用Volley联网请求成功=="+result);
 
                 CacheUtils.putString(context,Constants.NEWSCENTER_PAGER_URL,result);
@@ -94,7 +87,6 @@ public class NewsCenterPager extends BasePager {
 
                 processData(result);
                 //设置适配器
-
             }
         }, new ErrorListener() {
             @Override
@@ -162,8 +154,8 @@ public class NewsCenterPager extends BasePager {
         menuDetaiBasePagers = new ArrayList<>();
         menuDetaiBasePagers.add(new NewsMenuDatailPager(context,beanDatalist.get(0)));//新闻详情页面
         menuDetaiBasePagers.add(new TopicMenuDatailPager(context,beanDatalist.get(0)));//专题详情页面
-        menuDetaiBasePagers.add(new PhotosMenuDatailPager(context));//图组详情页面
-        menuDetaiBasePagers.add(new InteracMenuDatailPager(context));//互动详情页面
+        menuDetaiBasePagers.add(new PhotosMenuDatailPager(context,beanDatalist.get(2)));//图组详情页面
+        menuDetaiBasePagers.add(new InteracMenuDatailPager(context,beanDatalist.get(2)));//互动详情页面
         menuDetaiBasePagers.add(new ToupiaoMenuDatailPager(context));//投票详情页面
 
         //左侧菜单显示数据
@@ -266,5 +258,33 @@ public class NewsCenterPager extends BasePager {
         View rootView = menudetaiBasePager.rootView;
         menudetaiBasePager.initData();//初始化
         fl_content.addView(rootView);
+
+        if (position == 2){
+            ib_swich_list_grid.setVisibility(View.VISIBLE);
+            ib_swich_list_grid.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //1.得到图组对象详情页面对象
+                    PhotosMenuDatailPager detailPager = (PhotosMenuDatailPager)menuDetaiBasePagers.get(2);
+                    //2.调用图组对象的切换ListView和GridView对象
+                    detailPager.swichListAndGrid(ib_swich_list_grid);
+                }
+            });
+        }else if (position == 3){
+            ib_swich_list_grid.setVisibility(View.VISIBLE);
+            ib_swich_list_grid.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //1.得到互动对象详情页面对象
+                    InteracMenuDatailPager detailPager = (InteracMenuDatailPager) menuDetaiBasePagers.get(3);
+                    //2.调用互动对象的切换ListView和GridView对象
+                    detailPager.swichListAndGrid(ib_swich_list_grid);
+                }
+            });
+        }
+        else{
+            ib_swich_list_grid.setVisibility(View.GONE);
+        }
+
     }
 }

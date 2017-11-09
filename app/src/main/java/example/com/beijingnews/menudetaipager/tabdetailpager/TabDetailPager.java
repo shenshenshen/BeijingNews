@@ -428,15 +428,12 @@ public class TabDetailPager extends MenuDetaiBasePager {
                             internalHandler.removeCallbacksAndMessages(null);
                             internalHandler.postDelayed(new MyRunnable(),4000);
                             break;
-
                     }
                     return true;
                 }
             });
-
             return imageview;
         }
-
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView((View) object);
@@ -465,6 +462,7 @@ public class TabDetailPager extends MenuDetaiBasePager {
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
+                prePosition = 0;
                 LogUtil.e(childrenBean.getTitle()+"页面数据请求成功");
                 //缓存数据
                 CacheUtils.putString(context,url,result);

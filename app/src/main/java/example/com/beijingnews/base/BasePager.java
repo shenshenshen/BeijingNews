@@ -21,6 +21,8 @@ public class BasePager{
     public ImageButton ib_menu;
     public FrameLayout fl_content;
 
+    public ImageButton ib_swich_list_grid;
+
     public BasePager(Context context){
         this.context = context;
         rootView = initView();
@@ -29,6 +31,7 @@ public class BasePager{
     //初始化视图
     private View initView() {
         View view = View.inflate(context, R.layout.base_pager,null);
+        ib_swich_list_grid = (ImageButton) view.findViewById(R.id.ib_swich_list_grid);
         tv_title = (TextView)view.findViewById(R.id.tv_title);
         ib_menu = (ImageButton) view.findViewById(R.id.ib_menu);
         fl_content = (FrameLayout) view.findViewById(R.id.fl_content);

@@ -1,4 +1,0 @@
-#Tue Nov 07 14:00:32 CST 2017
-base.0=D\:\\Project\\BeijingNews-version1.0\\尚硅谷商城\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-renamed.0=classes.dex
-file.0=D\:\\Project\\BeijingNews-version1.0\\尚硅谷商城\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex
