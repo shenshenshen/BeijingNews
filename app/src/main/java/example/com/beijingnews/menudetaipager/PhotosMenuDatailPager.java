@@ -4,8 +4,15 @@ import android.content.Context;
 import android.graphics.Color;
 import android.view.Gravity;
 import android.view.View;
+import android.webkit.JavascriptInterface;
+import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
+
+import example.com.beijingnews.R;
 import example.com.beijingnews.base.MenuDetaiBasePager;
 import example.com.beijingnews.utiles.LogUtil;
 
@@ -15,8 +22,11 @@ import example.com.beijingnews.utiles.LogUtil;
 
 public class PhotosMenuDatailPager extends MenuDetaiBasePager {
 
-     private TextView textView;
+    @ViewInject(R.id.listview)
+    private ListView listview;
 
+    @ViewInject(R.id.gridview)
+    private GridView gridview;
 
     public PhotosMenuDatailPager(Context context) {
         super(context);
@@ -24,18 +34,16 @@ public class PhotosMenuDatailPager extends MenuDetaiBasePager {
 
     @Override
     public View initView() {
-        textView = new TextView(context);
-        textView.setGravity(Gravity.CENTER);
-        textView.setTextColor(Color.RED);
-        textView.setTextSize(25);
-        return textView;
+       View view = View.inflate(context, R.layout.photos_menudetail_pager,null);
+        x.view().inject(this,view);
+       return view;
     }
 
     @Override
     public void initData() {
         super.initData();
         LogUtil.e("图组详情页面内容被初始化了");
-        textView.setText("图组详情页面内容");
+
 
     }
 }

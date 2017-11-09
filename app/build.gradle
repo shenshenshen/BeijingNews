@@ -37,4 +37,5 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.3.0'
     compile project(':RefreshListView')
     compile project(':PullToRefresh_library')
+    compile 'com.mcxiaoke.volley:library:1.0.19'
 }
