@@ -3,6 +3,8 @@ package example.com.beijingnews.menudetaipager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
@@ -30,6 +32,8 @@ import org.xutils.x;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+import java.util.logging.LogRecord;
+
 import example.com.beijingnews.R;
 import example.com.beijingnews.base.MenuDetaiBasePager;
 import example.com.beijingnews.domain.NewsCenterPagerBean;
@@ -38,6 +42,7 @@ import example.com.beijingnews.utiles.BitmapCacheUtils;
 import example.com.beijingnews.utiles.CacheUtils;
 import example.com.beijingnews.utiles.Constants;
 import example.com.beijingnews.utiles.LogUtil;
+import example.com.beijingnews.utiles.NetCacheUtils;
 import example.com.beijingnews.volley.VolleyManager;
 
 /**
@@ -60,13 +65,46 @@ public class InteracMenuDatailPager extends MenuDetaiBasePager {
     private List<PhotosMenuDetailPageBean.DataBean.NewsBean> news;
     private PhotosMenuDetailPageBean.DataBean.NewsBean newdata;
 
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case NetCacheUtils.SUCESS://图片请求成功
+                    int position = msg.arg1;
+                    Bitmap bitmap = (Bitmap) msg.obj;
+                    if (listview.isShown()){
+                        ImageView iv_icon = (ImageView) listview.findViewWithTag(position);
+                        if (iv_icon != null && bitmap != null){
+                            iv_icon.setImageBitmap(bitmap);
+                        }
+                    }
+
+                    if (gridview.isShown()){
+                        ImageView iv_icon = (ImageView) gridview.findViewWithTag(position);
+                        if (iv_icon != null && bitmap != null){
+                            iv_icon.setImageBitmap(bitmap);
+                        }
+                    }
+
+                    LogUtil.e("联网请求图片成功=="+position);
+                    break;
+                case NetCacheUtils.FAIL://图片请求失败
+                    position = msg.arg1;
+                    LogUtil.e("联网请求图片失败="+position);
+                    break;
+            }
+        }
+    };
+
+
     //图片三级缓存工具
     private BitmapCacheUtils bitmapCacheUtils;
 
     public InteracMenuDatailPager(Context context, NewsCenterPagerBean.DataBean dataBean) {
         super(context);
         this.dataBean = dataBean;
-        bitmapCacheUtils = new BitmapCacheUtils();
+        bitmapCacheUtils = new BitmapCacheUtils(handler);
     }
 
     @Override
@@ -209,8 +247,9 @@ public class InteracMenuDatailPager extends MenuDetaiBasePager {
             //使用Glide加载图片
             //Glide.with(context).load(imageUrl).into(viewHolder.iv_icon);
 
+            viewHolder.iv_icon.setTag(position);
             //使用自定义的三级缓存请求图片
-            Bitmap bitmap = bitmapCacheUtils.getBitmap(imageUrl);//内存或者本地，不可能是网络的
+            Bitmap bitmap = bitmapCacheUtils.getBitmap(imageUrl,position);//内存或者本地，不可能是网络的
             if (bitmap != null){
                 viewHolder.iv_icon.setImageBitmap(bitmap);
             }
