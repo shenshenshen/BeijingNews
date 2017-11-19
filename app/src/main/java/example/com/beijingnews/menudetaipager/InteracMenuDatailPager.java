@@ -1,10 +1,13 @@
 package example.com.beijingnews.menudetaipager;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
@@ -30,6 +33,7 @@ import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
 import java.util.logging.LogRecord;
@@ -248,6 +252,9 @@ public class InteracMenuDatailPager extends MenuDetaiBasePager {
             //Glide.with(context).load(imageUrl).into(viewHolder.iv_icon);
 
             viewHolder.iv_icon.setTag(position);
+
+
+
             //使用自定义的三级缓存请求图片
             Bitmap bitmap = bitmapCacheUtils.getBitmap(imageUrl,position);//内存或者本地，不可能是网络的
             if (bitmap != null){

@@ -1,16 +1,25 @@
 package example.com.beijingnews.activity;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
+import android.widget.Toast;
 
 import com.githang.statusbar.StatusBarCompat;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import example.com.beijingnews.R;
 import example.com.beijingnews.fragment.ContentFragment;
@@ -33,6 +42,35 @@ public class MainActivity extends SlidingFragmentActivity {
         //初始化Fragment
         initFragment();
 
+        //权限申请
+        List<String> permissionList = new ArrayList<>();
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+            permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+            permissionList.add(Manifest.permission.READ_EXTERNAL_STORAGE);
+        }
+        if (!permissionList.isEmpty())
+        {
+            String[] permissions = permissionList.toArray(new String[permissionList.size()]);
+            ActivityCompat.requestPermissions(MainActivity.this,permissions,1);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case 1:
+                if (grantResults.length > 0){
+                    for (int result : grantResults){
+                        if (result != PackageManager.PERMISSION_GRANTED){
+                            Toast.makeText(this,"必须同意所有权限才能使用",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }else{
+                    Toast.makeText(this,"发生未知错误",Toast.LENGTH_SHORT).show();
+                }
+        }
     }
 
     private void iniSlidingMenu() {

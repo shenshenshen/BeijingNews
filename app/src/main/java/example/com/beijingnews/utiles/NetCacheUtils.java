@@ -24,12 +24,14 @@ public class NetCacheUtils {
     //请求图片失败
     public static final int FAIL = 2;
     private final Handler handler;
+    private final LocalCacheUtils localCacheUtils;
     //线程池服务类
     private ExecutorService service;
 
-    public NetCacheUtils(Handler handler) {
+    public NetCacheUtils(Handler handler, LocalCacheUtils localCacheUtils) {
         this.handler = handler;
         service = Executors.newFixedThreadPool(10);
+        this.localCacheUtils = localCacheUtils;
     }
 
     //联网请求得到图片
@@ -58,11 +60,10 @@ public class NetCacheUtils {
                 connection.setConnectTimeout(4000);//连接超时
                 connection.setReadTimeout(4000);//读取超时
                 connection.connect();
-                int code = connection.getResponseCode();//相应码
+                int code = connection.getResponseCode();//响应码
                 if (code == 200){
                     InputStream is = connection.getInputStream();//获得输入流
                     Bitmap bitmap = BitmapFactory.decodeStream(is);
-
                     //显示到控件上,发消息把Bitmap发出去和position
                     Message msg = Message.obtain();
                     msg.what = SUCESS;
@@ -71,7 +72,9 @@ public class NetCacheUtils {
                     handler.sendMessage(msg);
 
                     //在内存中缓存一份
+
                     //在本地中缓存一份
+                    localCacheUtils.putBitmap(imageUrl,bitmap);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
