@@ -5,10 +5,10 @@ INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\ma
 INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml:2:1-298:12
 INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml:2:1-298:12
 MERGED from [:ViewPagerIndicator_library] D:\Project\BeijingNews-version1.0\ViewPagerIndicator_library\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:appcompat-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.3.0.aar\3b47de1011bb3ddfdd5f742aae5fbd1c\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:animated-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.3.0.aar\7eb02bc42dab55c210b8c382bc2ec9e5\AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:support-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.3.0.aar\162d894a38edf73efe9d0be203d4921c\AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\e879b265c264fd5363e34e53e961a348\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.3.0.aar\8393dd70fc96f6650b84f5984c337977\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.3.0.aar\b45929aa27f24993d85263f8103769e0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.3.0.aar\93f035573685573a610e54923f6b0684\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\5a4756613be397f77aa62831b261cfa8\AndroidManifest.xml:17:1-24:12
 INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml:2:1-298:12
 INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml:2:1-298:12
 INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml:2:1-298:12
@@ -32,18 +32,18 @@ INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\ma
 INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml:7:5-9:41
 MERGED from [:ViewPagerIndicator_library] D:\Project\BeijingNews-version1.0\ViewPagerIndicator_library\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:ViewPagerIndicator_library] D:\Project\BeijingNews-version1.0\ViewPagerIndicator_library\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.3.0.aar\3b47de1011bb3ddfdd5f742aae5fbd1c\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.3.0.aar\3b47de1011bb3ddfdd5f742aae5fbd1c\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.3.0.aar\7eb02bc42dab55c210b8c382bc2ec9e5\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:animated-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.3.0.aar\7eb02bc42dab55c210b8c382bc2ec9e5\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.3.0.aar\162d894a38edf73efe9d0be203d4921c\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.3.0.aar\162d894a38edf73efe9d0be203d4921c\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\e879b265c264fd5363e34e53e961a348\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\e879b265c264fd5363e34e53e961a348\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.3.0.aar\8393dd70fc96f6650b84f5984c337977\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.3.0.aar\8393dd70fc96f6650b84f5984c337977\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.3.0.aar\b45929aa27f24993d85263f8103769e0\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.3.0.aar\b45929aa27f24993d85263f8103769e0\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.3.0.aar\93f035573685573a610e54923f6b0684\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.3.0.aar\93f035573685573a610e54923f6b0684\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\5a4756613be397f77aa62831b261cfa8\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\5a4756613be397f77aa62831b261cfa8\AndroidManifest.xml:20:5-43
 INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml:7:5-9:41
 INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml:7:5-9:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.3.0.aar\3b47de1011bb3ddfdd5f742aae5fbd1c\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.3.0.aar\8393dd70fc96f6650b84f5984c337977\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		ADDED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml:9:9-38
 		INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml
@@ -54,14 +54,14 @@ INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\ma
 		INJECTED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml
 application
 ADDED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml:11:5-297:19
-MERGED from [com.android.support:appcompat-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.3.0.aar\3b47de1011bb3ddfdd5f742aae5fbd1c\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.3.0.aar\3b47de1011bb3ddfdd5f742aae5fbd1c\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.3.0.aar\7eb02bc42dab55c210b8c382bc2ec9e5\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.3.0.aar\7eb02bc42dab55c210b8c382bc2ec9e5\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.3.0.aar\162d894a38edf73efe9d0be203d4921c\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.3.0.aar\162d894a38edf73efe9d0be203d4921c\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\e879b265c264fd5363e34e53e961a348\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\e879b265c264fd5363e34e53e961a348\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.3.0.aar\8393dd70fc96f6650b84f5984c337977\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.3.0.aar\8393dd70fc96f6650b84f5984c337977\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.3.0.aar\b45929aa27f24993d85263f8103769e0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.3.0.aar\b45929aa27f24993d85263f8103769e0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.3.0.aar\93f035573685573a610e54923f6b0684\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.3.0.aar\93f035573685573a610e54923f6b0684\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\5a4756613be397f77aa62831b261cfa8\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\5a4756613be397f77aa62831b261cfa8\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from D:\Project\BeijingNews-version1.0\ViewPagerIndicator_sample\src\main\AndroidManifest.xml:12:9-50
 	android:icon

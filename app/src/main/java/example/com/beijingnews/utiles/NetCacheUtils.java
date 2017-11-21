@@ -25,13 +25,15 @@ public class NetCacheUtils {
     public static final int FAIL = 2;
     private final Handler handler;
     private final LocalCacheUtils localCacheUtils;
+    private final MemoryCacheUtils memoryCacheUtils;
     //线程池服务类
     private ExecutorService service;
 
-    public NetCacheUtils(Handler handler, LocalCacheUtils localCacheUtils) {
+    public NetCacheUtils(Handler handler, LocalCacheUtils localCacheUtils, MemoryCacheUtils memoryCacheUtils) {
         this.handler = handler;
         service = Executors.newFixedThreadPool(10);
         this.localCacheUtils = localCacheUtils;
+        this.memoryCacheUtils = memoryCacheUtils;
     }
 
     //联网请求得到图片
@@ -72,9 +74,10 @@ public class NetCacheUtils {
                     handler.sendMessage(msg);
 
                     //在内存中缓存一份
-
+                    memoryCacheUtils.putBibtmap(imageUrl,bitmap);
                     //在本地中缓存一份
                     localCacheUtils.putBitmap(imageUrl,bitmap);
+
                 }
             } catch (IOException e) {
                 e.printStackTrace();

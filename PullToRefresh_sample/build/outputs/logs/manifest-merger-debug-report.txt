@@ -7,7 +7,7 @@ INJECTED from D:\Project\BeijingNews-version1.0\PullToRefresh_sample\src\main\An
 MERGED from [:pullToRefreshListFragment] D:\Project\BeijingNews-version1.0\pullToRefreshListFragment\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [:pullToRefreshViewPager] D:\Project\BeijingNews-version1.0\pullToRefreshViewPager\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [:PullToRefresh_library] D:\Project\BeijingNews-version1.0\PullToRefresh_library\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-13:12
-MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\e879b265c264fd5363e34e53e961a348\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\5a4756613be397f77aa62831b261cfa8\AndroidManifest.xml:17:1-24:12
 INJECTED from D:\Project\BeijingNews-version1.0\PullToRefresh_sample\src\main\AndroidManifest.xml:2:1-71:12
 INJECTED from D:\Project\BeijingNews-version1.0\PullToRefresh_sample\src\main\AndroidManifest.xml:2:1-71:12
 INJECTED from D:\Project\BeijingNews-version1.0\PullToRefresh_sample\src\main\AndroidManifest.xml:2:1-71:12
@@ -35,8 +35,8 @@ MERGED from [:pullToRefreshViewPager] D:\Project\BeijingNews-version1.0\pullToRe
 MERGED from [:pullToRefreshViewPager] D:\Project\BeijingNews-version1.0\pullToRefreshViewPager\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:PullToRefresh_library] D:\Project\BeijingNews-version1.0\PullToRefresh_library\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:PullToRefresh_library] D:\Project\BeijingNews-version1.0\PullToRefresh_library\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\e879b265c264fd5363e34e53e961a348\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\e879b265c264fd5363e34e53e961a348\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\5a4756613be397f77aa62831b261cfa8\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\5a4756613be397f77aa62831b261cfa8\AndroidManifest.xml:20:5-43
 INJECTED from D:\Project\BeijingNews-version1.0\PullToRefresh_sample\src\main\AndroidManifest.xml:7:5-9:41
 INJECTED from D:\Project\BeijingNews-version1.0\PullToRefresh_sample\src\main\AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
@@ -55,8 +55,8 @@ MERGED from [:pullToRefreshViewPager] D:\Project\BeijingNews-version1.0\pullToRe
 MERGED from [:pullToRefreshViewPager] D:\Project\BeijingNews-version1.0\pullToRefreshViewPager\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-20
 MERGED from [:PullToRefresh_library] D:\Project\BeijingNews-version1.0\PullToRefresh_library\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-20
 MERGED from [:PullToRefresh_library] D:\Project\BeijingNews-version1.0\PullToRefresh_library\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-20
-MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\e879b265c264fd5363e34e53e961a348\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\e879b265c264fd5363e34e53e961a348\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\5a4756613be397f77aa62831b261cfa8\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-23.3.0.aar\5a4756613be397f77aa62831b261cfa8\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from D:\Project\BeijingNews-version1.0\PullToRefresh_sample\src\main\AndroidManifest.xml:14:9-41
 	android:hardwareAccelerated

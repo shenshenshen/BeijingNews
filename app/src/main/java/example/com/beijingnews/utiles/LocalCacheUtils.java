@@ -18,6 +18,12 @@ import java.util.List;
  */
 
 class LocalCacheUtils {
+    private final MemoryCacheUtils memoryCacheUtils;
+
+    public LocalCacheUtils(MemoryCacheUtils memoryCacheUtils) {
+        this.memoryCacheUtils = memoryCacheUtils;
+    }
+
     //根据Url获取图片
     public Bitmap getBitmapFroml(String imageUrl) {
         //判断sdcard是否挂载
@@ -31,6 +37,10 @@ class LocalCacheUtils {
                 if(file.exists()){
                     FileInputStream is = new FileInputStream(file);
                     Bitmap bitmap = BitmapFactory.decodeStream(is);
+                    if (bitmap != null){
+                        memoryCacheUtils.putBibtmap(imageUrl,bitmap);
+                        LogUtil.e("从本地保存到内存中");
+                    }
                     return bitmap;
                 }
             } catch (Exception e) {
