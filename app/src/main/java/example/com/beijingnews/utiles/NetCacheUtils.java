@@ -72,7 +72,6 @@ public class NetCacheUtils {
                     msg.arg1 = position;
                     msg.obj = bitmap;
                     handler.sendMessage(msg);
-
                     //在内存中缓存一份
                     memoryCacheUtils.putBibtmap(imageUrl,bitmap);
                     //在本地中缓存一份

@@ -49,7 +49,7 @@ public class CacheUtils {
                     //保存文本数据
                     FileOutputStream fileOutputStream = new FileOutputStream(file);
                     fileOutputStream.write(value.getBytes());
-                    fileOutputStream.close();
+                    fileOutputStream.close();//记得关闭流
                     LogUtil.e("用文件缓存String");
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -73,10 +73,10 @@ public class CacheUtils {
                         ByteArrayOutputStream stream = new ByteArrayOutputStream();
                         byte[] buffer = new byte[1024];
                         int length;
-                        while ((length = fileInputStream.read(buffer)) != -1 ){
-                            stream.write(buffer,0,length);
+                        while ((length = fileInputStream.read(buffer)) != -1 ){//读文件的长度
+                            stream.write(buffer,0,length);//写到这个流里面
                         }
-                        fileInputStream.close();
+                        fileInputStream.close();//记得关闭流
                         stream.close();
                          result = stream.toString();
                         LogUtil.e("用文件读取String");
