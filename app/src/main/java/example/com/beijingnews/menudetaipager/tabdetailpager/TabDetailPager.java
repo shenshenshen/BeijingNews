@@ -123,11 +123,9 @@ public class TabDetailPager extends MenuDetaiBasePager {
             //2，判断是否存在，如果不存在，才保存，并且刷新适配器
             if (!idArray.contains(newsData.getId()+"")){//3511
                 CacheUtils.putString(context,READ_ARRAY_ID,idArray+newsData.getId()+",");//"3511,"
-
                 //刷新适配器
                 adpter.notifyDataSetChanged();//getCount - - >getView
             }
-
             //跳转到新闻浏览页面
             Intent intent = new Intent(context,NewsDetailActivity.class);
             intent.putExtra("url",Constants.BASE_URL+newsData.getUrl());
@@ -206,7 +204,7 @@ public class TabDetailPager extends MenuDetaiBasePager {
         getDataFromNet();
 
     }
-    //之前点的位置
+
 
 
     //显示数据
@@ -272,8 +270,6 @@ public class TabDetailPager extends MenuDetaiBasePager {
             internalHandler.sendEmptyMessage(0);
         }
     }
-
-
 
     //listviewadpater
     class TabDetailPagerListAdapter extends BaseAdapter{

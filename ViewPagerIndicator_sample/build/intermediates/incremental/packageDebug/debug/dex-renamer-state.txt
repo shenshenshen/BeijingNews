@@ -1,0 +1,4 @@
+#Wed Nov 22 11:05:51 CST 2017
+base.0=D\:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

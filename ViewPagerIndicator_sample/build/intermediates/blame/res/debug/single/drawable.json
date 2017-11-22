@@ -56,12 +56,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.3.0.aar\\8393dd70fc96f6650b84f5984c337977\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
-        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\perm_group_calendar.xml",
-        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\perm_group_calendar.xml"
-    },
-    {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.3.0.aar\\8393dd70fc96f6650b84f5984c337977\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\perm_group_calendar.xml",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\perm_group_calendar.xml"
     },
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
@@ -76,12 +76,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.3.0.aar\\8393dd70fc96f6650b84f5984c337977\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
-        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_indicator.xml",
-        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\debug\\res\\drawable\\vpi__tab_indicator.xml"
-    },
-    {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.3.0.aar\\8393dd70fc96f6650b84f5984c337977\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_indicator.xml",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\debug\\res\\drawable\\vpi__tab_indicator.xml"
     },
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
@@ -124,12 +124,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.3.0.aar\\8393dd70fc96f6650b84f5984c337977\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
-        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\custom_tab_indicator.xml",
-        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\custom_tab_indicator.xml"
-    },
-    {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.3.0.aar\\8393dd70fc96f6650b84f5984c337977\\res\\drawable\\abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\custom_tab_indicator.xml",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable\\custom_tab_indicator.xml"
     },
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",

@@ -20,12 +20,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.3.0.aar\\8393dd70fc96f6650b84f5984c337977\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\perm_group_camera_normal.png",
-        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable-hdpi\\perm_group_camera_normal.png"
-    },
-    {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.3.0.aar\\8393dd70fc96f6650b84f5984c337977\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\perm_group_camera_normal.png",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable-hdpi\\perm_group_camera_normal.png"
     },
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png",
@@ -80,12 +80,12 @@
         "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable-hdpi\\perm_group_device_alarms_selected.png"
     },
     {
-        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\custom_tab_indicator_selected.9.png",
-        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable-hdpi\\custom_tab_indicator_selected.9.png"
-    },
-    {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.3.0.aar\\8393dd70fc96f6650b84f5984c337977\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\custom_tab_indicator_selected.9.png",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable-hdpi\\custom_tab_indicator_selected.9.png"
     },
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
@@ -184,12 +184,12 @@
         "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\vpi__tab_unselected_holo.9.png"
     },
     {
-        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\custom_tab_indicator_unselected_focused.9.png",
-        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable-hdpi\\custom_tab_indicator_unselected_focused.9.png"
-    },
-    {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.3.0.aar\\8393dd70fc96f6650b84f5984c337977\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\custom_tab_indicator_unselected_focused.9.png",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable-hdpi\\custom_tab_indicator_unselected_focused.9.png"
     },
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_voice_search_api_mtrl_alpha.png",
@@ -240,12 +240,12 @@
         "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\src\\main\\res\\drawable-hdpi\\custom_tab_indicator_unselected_pressed.9.png"
     },
     {
-        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\vpi__tab_selected_pressed_holo.9.png",
-        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\vpi__tab_selected_pressed_holo.9.png"
-    },
-    {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.3.0.aar\\8393dd70fc96f6650b84f5984c337977\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\vpi__tab_selected_pressed_holo.9.png",
+        "source": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_library\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\vpi__tab_selected_pressed_holo.9.png"
     },
     {
         "merged": "D:\\Project\\BeijingNews-version1.0\\ViewPagerIndicator_sample\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
