@@ -1,5 +1,6 @@
-package com.example.jpushdemo;
+package example.com.beijingnews.jpushdemo;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -9,8 +10,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Looper;
+import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.regex.Matcher;
@@ -34,7 +37,7 @@ public class ExampleUtil {
             return true;
         return false;
     }
-    
+
     // 校验Tag Alias 只能是数字,英文字母和中文
     public static boolean isValidTagAndAlias(String s) {
         Pattern p = Pattern.compile("^[\u4E00-\u9FA50-9a-zA-Z_!@#$&*+=.|]+$");
@@ -62,44 +65,43 @@ public class ExampleUtil {
         }
         return appKey;
     }
-    
+
     // 取得版本号
     public static String GetVersion(Context context) {
-		try {
-			PackageInfo manager = context.getPackageManager().getPackageInfo(
-					context.getPackageName(), 0);
-			return manager.versionName;
-		} catch (NameNotFoundException e) {
-			return "Unknown";
-		}
-	}
-
-    public static void showToast(final String toast, final Context context)
-    {
-    	new Thread(new Runnable() {
-			
-			@Override
-			public void run() {
-				Looper.prepare();
-				Toast.makeText(context, toast, Toast.LENGTH_SHORT).show();
-				Looper.loop();
-			}
-		}).start();
+        try {
+            PackageInfo manager = context.getPackageManager().getPackageInfo(
+                    context.getPackageName(), 0);
+            return manager.versionName;
+        } catch (NameNotFoundException e) {
+            return "Unknown";
+        }
     }
-    
+
+    public static void showToast(final String toast, final Context context) {
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                Looper.prepare();
+                Toast.makeText(context, toast, Toast.LENGTH_SHORT).show();
+                Looper.loop();
+            }
+        }).start();
+    }
+
     public static boolean isConnected(Context context) {
         ConnectivityManager conn = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = conn.getActiveNetworkInfo();
         return (info != null && info.isConnected());
     }
-    
-	public static String getImei(Context context, String imei) {
+
+    public String getImei(Context context, String imei) {
         String ret = null;
-		try {
-			TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        try {
+            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             ret = telephonyManager.getDeviceId();
-		} catch (Exception e) {
-			Logger.e(ExampleUtil.class.getSimpleName(), e.getMessage());
+        } catch (Exception e) {
+			Log.e(ExampleUtil.class.getSimpleName(), e.getMessage());
 		}
 		if (isReadableASCII(ret)){
             return ret;

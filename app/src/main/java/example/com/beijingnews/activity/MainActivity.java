@@ -50,6 +50,10 @@ public class MainActivity extends SlidingFragmentActivity {
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
             permissionList.add(Manifest.permission.READ_EXTERNAL_STORAGE);
         }
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            permissionList.add( Manifest.permission.READ_PHONE_STATE);
+        }
         if (!permissionList.isEmpty())
         {
             String[] permissions = permissionList.toArray(new String[permissionList.size()]);

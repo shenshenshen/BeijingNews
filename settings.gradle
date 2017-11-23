@@ -1,4 +1,4 @@
-include ':app', ':SlidingMenu_library', ':RefreshListView', ':AndroidAndJs', ':尚硅谷商城'
+include ':app', ':SlidingMenu_library', ':RefreshListView', ':AndroidAndJs', ':尚硅谷商城', ':JPushExample'
 project(':SlidingMenu_library').projectDir = new File('SlidingMenu-master/SlidingMenu-master/library')
 include ':ViewPagerIndicator_library'
 include ':ViewPagerIndicator_sample'
@@ -6,3 +6,4 @@ include ':PullToRefresh_library'
 include ':pullToRefreshListFragment'
 include ':pullToRefreshViewPager'
 include ':PullToRefresh_sample'
+project(':JPushExample').projectDir = new File('JPushExample(774537)')
